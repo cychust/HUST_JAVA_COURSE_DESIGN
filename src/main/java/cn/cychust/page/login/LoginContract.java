@@ -1,0 +1,22 @@
+package cn.cychust.page.login;
+
+import cn.cychust.base.BasePresenter;
+import cn.cychust.base.BaseView;
+
+/**
+ * @program: hospital-manager-system
+ * @description:
+ * @author: Yichao Chen
+ * @create: 2019-03-15 16:22
+ **/
+public class LoginContract {
+    interface View extends BaseView<Presenter>{
+        void loginSucess();
+        void loginFailed();
+        void logining();
+    }
+    interface Presenter extends BasePresenter {
+        void  login(String user,String pass);
+        void register();
+    }
+}
