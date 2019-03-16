@@ -1,10 +1,13 @@
 package cn.cychust.controller;
 
+import cn.cychust.comm.BaseObserver;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXRadioButton;
 import io.datafx.controller.ViewController;
-import javafx.event.EventHandler;
+import io.reactivex.Observable;
+import io.reactivex.rxjavafx.observables.JavaFxObservable;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.input.MouseEvent;
 
 import javax.annotation.PostConstruct;
 
@@ -14,17 +17,29 @@ import javax.annotation.PostConstruct;
  * @author: Yichao Chen
  * @create: 2019-03-16 00:02
  **/
-@ViewController(value = "/fxml/main.fxml",title = "Login Windows")
+@ViewController(value = "/fxml/main.fxml")
 public final class LoginController {
     @FXML
-    private JFXButton btn;
+    private JFXRadioButton btn;
+
+    @FXML
+    private JFXButton btn2;
 
     @PostConstruct
-    public void init() throws Exception{
+    public void init() throws Exception {
         //init
-        btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            public void handle(MouseEvent event) {
-                btn.setText("vvvvvvvvv");
+
+
+        Observable<ActionEvent> bttnEvent=JavaFxObservable.eventsOf(btn,ActionEvent.ACTION);
+        bttnEvent.subscribe(new BaseObserver<ActionEvent>() {
+            @Override
+            public void onMyError(Throwable throwable) {
+
+            }
+
+            @Override
+            public void onNext(ActionEvent actionEvent) {
+                btn.setText("aaaaa");
             }
         });
     }
