@@ -12,24 +12,27 @@ import io.reactivex.Observable;
  **/
 public class Repository implements RepositorySource {
 
-    private static Repository INSTANCE=null;
+    private static Repository INSTANCE = null;
 
     private LoginClient loginClient;
 
-    private Repository(){}
+    private Repository() {
+    }
 
-    public static Repository getINSTANCE(){
-        if (INSTANCE==null){
-            INSTANCE=new Repository();
+    public static Repository getINSTANCE() {
+        if (INSTANCE == null) {
+            INSTANCE = new Repository();
         }
         return INSTANCE;
     }
 
-    public Observable create(String userId, String password) {
-        return loginClient.create(userId,password);
+    @Override
+    public void create(String userId, String password, final Callback callback) {
+        loginClient.create(userId, password);
     }
 
-    public Observable login(String userId, String password) {
-        return loginClient.login(userId,password);
+    @Override
+    public void login(String userId, String password, final Callback callback) {
+        loginClient.login(userId, password);
     }
 }

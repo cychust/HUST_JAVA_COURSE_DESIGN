@@ -11,11 +11,13 @@ import io.reactivex.Observable;
  **/
 public interface RepositorySource {
 
-    public Observable create(String userId, String password);
-    public Observable login(String userId,String password);
+    public void create(String userId, String password, final Callback callback);
 
-    interface Callback{
+    public void login(String userId, String password, final Callback callback);
+
+    interface Callback {
         void onSuccuss();
+
         void onFailed();
     }
 }

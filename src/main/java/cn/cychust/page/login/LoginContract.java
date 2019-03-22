@@ -10,13 +10,17 @@ import cn.cychust.base.BaseView;
  * @create: 2019-03-15 16:22
  **/
 public class LoginContract {
-    interface View extends BaseView<Presenter>{
-        void loginSucess();
+    public interface View extends BaseView<Presenter> {
+        void loginSuccess();
+
         void loginFailed();
+
         void logining();
     }
-    interface Presenter extends BasePresenter {
-        void  login(String user,String pass);
+
+    public interface Presenter extends BasePresenter {
+        void login(String user, String pass);
+
         void register();
     }
 }
