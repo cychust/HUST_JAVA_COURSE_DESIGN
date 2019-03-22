@@ -1,4 +1,4 @@
-package cn.cychust.bean;
+package cn.cychust.data.tbrxx;
 
 import java.sql.Date;
 
@@ -9,13 +9,14 @@ import java.sql.Date;
  * @create: 2019-03-22 16:33
  **/
 public class T_BRXX {
+
     private String BRBH;    //病人编号
     private String BRMC;    //病人名称
     private String DLKL;    //登录口令
-    private String YCJE;    //病人预存金额
+    private float YCJE;    //病人预存金额
     private Date DLRQ;      //最后一次登录信息
 
-    public T_BRXX(String BRBH, String BRMC, String DLKL, String YCJE, Date DLRQ) {
+    public T_BRXX(String BRBH, String BRMC, String DLKL, float YCJE, Date DLRQ) {
         this.BRBH = BRBH;
         this.BRMC = BRMC;
         this.DLKL = DLKL;
@@ -50,11 +51,12 @@ public class T_BRXX {
         this.DLKL = DLKL;
     }
 
-    public String getYCJE() {
+
+    public float getYCJE() {
         return YCJE;
     }
 
-    public void setYCJE(String YCJE) {
+    public void setYCJE(float YCJE) {
         this.YCJE = YCJE;
     }
 
@@ -68,6 +70,6 @@ public class T_BRXX {
 
     @Override
     public String toString() {
-        return BRBH + BRMC + DLKL;
+        return "[BRBH: " + BRBH + " ]" + "[BRMC: " + BRMC + " ]" + "[DLKL: " + DLKL + " ]";
     }
 }

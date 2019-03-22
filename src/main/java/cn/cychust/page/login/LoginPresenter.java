@@ -1,8 +1,9 @@
 package cn.cychust.page.login;
 
 import cn.cychust.base.BasePresenterImpl;
-import cn.cychust.comm.BaseObserver;
-import cn.cychust.data.Repository;
+import cn.cychust.data.tbrxx.T_BRXX;
+import cn.cychust.data.tbrxx.source.TBRXXDataSource;
+import cn.cychust.data.tbrxx.source.TBRXXRepository;
 
 /**
  * @program: hospital-manager-system
@@ -12,38 +13,30 @@ import cn.cychust.data.Repository;
  **/
 public class LoginPresenter extends BasePresenterImpl implements LoginContract.Presenter {
     private LoginContract.View mView;
-    private Repository mRepository;
+    private TBRXXDataSource mTBRXXDataSource;
 
-    public LoginPresenter(LoginContract.View view, Repository repository) {
+    public LoginPresenter(LoginContract.View view, TBRXXDataSource TBRXXDataSource) {
         mView = view;
-        mRepository = repository;
+        mTBRXXDataSource = TBRXXDataSource;
         mView.setPresenter(this);
     }
 
     public void login(String user, String pass) {
-
-        DatabaseHelper.findAll();
-
-        mRepository.login(user, pass).subscribe(new BaseObserver<Boolean>() {
+        TBRXXDataSource.getINSTANCE().getOne(user, pass, new TBRXXRepository.GetTbrxxCallback() {
             @Override
-            public void onMyError(Throwable throwable) {
-                //todo log
+            public void onTasksLoaded(T_BRXX t_brxx) {
+
             }
 
             @Override
-            public void onNext(Boolean o) {
-                if (o) {
-                    //开启新界面
-                } else {
-                    //log
-                }
+            public void onDataNotAvailable() {
+
             }
         });
     }
 
     public void register() {
         //todo register 界面
-        DatabaseHelper.findAll();
         mView.loginSuccess();
     }
 

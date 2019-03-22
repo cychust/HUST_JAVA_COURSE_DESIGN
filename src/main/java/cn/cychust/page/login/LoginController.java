@@ -1,6 +1,6 @@
 package cn.cychust.page.login;
 
-import cn.cychust.data.Repository;
+import cn.cychust.data.tbrxx.source.TBRXXDataSource;
 import com.jfoenix.controls.JFXButton;
 import io.datafx.controller.ViewController;
 import javafx.fxml.FXML;
@@ -27,7 +27,7 @@ public final class LoginController implements LoginContract.View {
     public void init() throws Exception {
         //init
 
-        setPresenter(new LoginPresenter(this, Repository.getINSTANCE()));
+        setPresenter(new LoginPresenter(this, TBRXXDataSource.getINSTANCE()));
 
         btn_start.setOnMouseClicked(e -> {
             mPresenter.register();
