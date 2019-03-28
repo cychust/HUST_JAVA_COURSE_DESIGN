@@ -22,7 +22,7 @@ public class LoginPresenter extends BasePresenterImpl implements LoginContract.P
     }
 
     public void login(String user, String pass) {
-        TBRXXDataSource.getINSTANCE().getOne(user, pass, new TBRXXRepository.GetTbrxxCallback() {
+        mTBRXXDataSource.getOne(user, pass, new TBRXXRepository.GetTbrxxCallback() {
             @Override
             public void onTasksLoaded(T_BRXX t_brxx) {
 

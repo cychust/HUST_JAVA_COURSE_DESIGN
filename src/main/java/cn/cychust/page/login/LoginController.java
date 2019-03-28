@@ -1,5 +1,6 @@
 package cn.cychust.page.login;
 
+import cn.cychust.comm.Executor;
 import cn.cychust.data.tbrxx.source.TBRXXDataSource;
 import com.jfoenix.controls.JFXButton;
 import io.datafx.controller.ViewController;
@@ -19,23 +20,14 @@ public final class LoginController implements LoginContract.View {
     private LoginContract.Presenter mPresenter;
     @FXML
     private JFXButton btn_start;
-//
-//    @FXML
-//    private JFXButton btn2;
 
     @PostConstruct
     public void init() throws Exception {
-        //init
 
-        setPresenter(new LoginPresenter(this, TBRXXDataSource.getINSTANCE()));
-
+        setPresenter(new LoginPresenter(this, new TBRXXDataSource(Executor.getINSTANCE().getExecutor())));
         btn_start.setOnMouseClicked(e -> {
             mPresenter.register();
         });
-//
-//        btn2.setOnMouseClicked(e -> {
-//            mPresenter.register();
-//        });
     }
 
     @Override

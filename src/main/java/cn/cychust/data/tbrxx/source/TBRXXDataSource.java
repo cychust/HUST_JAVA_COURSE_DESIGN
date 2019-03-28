@@ -5,6 +5,7 @@ import cn.cychust.data.tbrxx.T_BRXX;
 import cn.cychust.data.tbrxx.source.local.BrxxLocalDataSource;
 
 import java.util.List;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ThreadPoolExecutor;
 
 
@@ -16,20 +17,13 @@ import java.util.concurrent.ThreadPoolExecutor;
  **/
 public class TBRXXDataSource implements TBRXXRepository {
 
-    private static TBRXXDataSource INSTANCE = null;
 
     private BrxxLocalDataSource brxxLocalDataSource;
 
-    private TBRXXDataSource() {
-        this.brxxLocalDataSource = BrxxLocalDataSource.getINSTANCE(Executor.getINSTANCE().getExecutor());
+    public TBRXXDataSource(ExecutorService executorService) {
+        this.brxxLocalDataSource = BrxxLocalDataSource.getINSTANCE(executorService);
     }
 
-    public static TBRXXDataSource getINSTANCE() {
-        if (INSTANCE == null) {
-            INSTANCE = new TBRXXDataSource();
-        }
-        return INSTANCE;
-    }
 
     @Override
     public void getOne(String userId, String password, GetTbrxxCallback callback) {
@@ -53,7 +47,7 @@ public class TBRXXDataSource implements TBRXXRepository {
 
     @Override
     public void saveOne(T_BRXX newOne) {
-
+        brxxLocalDataSource.saveOne(newOne);
     }
 
     @Override
@@ -75,4 +69,5 @@ public class TBRXXDataSource implements TBRXXRepository {
     public void createTable() {
         brxxLocalDataSource.createTable();
     }
+
 }

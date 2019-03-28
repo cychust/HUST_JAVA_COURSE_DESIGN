@@ -6,7 +6,6 @@ import cn.cychust.data.tbrxx.source.TBRXXRepository;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.ThreadPoolExecutor;
 
 
 /**
@@ -16,8 +15,6 @@ import java.util.concurrent.ThreadPoolExecutor;
  * @create: 2019-03-15 16:52
  **/
 public class BrxxLocalDataSource implements TBRXXRepository {
-    //
-    //database repository; single instance
     private static BrxxLocalDataSource INSTANCE;
 
     private ExecutorService executor;
@@ -56,7 +53,10 @@ public class BrxxLocalDataSource implements TBRXXRepository {
 
     @Override
     public void saveOne(T_BRXX newOne) {
-
+        Runnable runnable = () -> {
+            UserDao.addOne(newOne);
+        };
+        executor.execute(runnable);
     }
 
     @Override
@@ -81,6 +81,8 @@ public class BrxxLocalDataSource implements TBRXXRepository {
         };
         executor.execute(runnable);
     }
+
+
 
     //    @Override
 //    public void login(final String userId, final String password, Callback callback) {

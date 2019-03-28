@@ -23,9 +23,9 @@ public class UserDao {
     private static final Logger LOGGER = Logger.getLogger(UserDao.class);
 
     private final static String ADD_ONE_STATEMENT = "INSERT INTO T_BRXX (BRBH,BRMC,DLKL,YCJE,DLRQ) VALUES(?,?,?,?,?)";
-    private final static String FIND_ONE_BY_USER_AND_PASS = "SELECT * FROM T_BRXX WHERE BRMC = ? AND DLKL = ?";
+    private final static String FIND_ONE_BY_USER_AND_PASS = "SELECT * FROM T_BRXX WHERE BRBH = ? AND DLKL = ?";
     private final static String CREATE_TABLE =
-            "CREATE TABLE student(" +
+            "CREATE TABLE IF NOT EXISTS T_BRXX(" +
                     "BRBH CHAR(6) not NULL, " +
                     "BRMC CHAR(10) not NULL, " +
                     "DLKL CHAR(8) not NULL, " +
@@ -34,7 +34,7 @@ public class UserDao {
                     "PRIMARY KEY ( BRBH )" +
                     ")ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
-    private final static String FIND_ALL = "SELECT * FROM EMP";
+    private final static String FIND_ALL = "SELECT * FROM T_BRXX";
 
     private final static String UPDATE_ONE_BY_ID = "UPDATE T_BRXX SET BRMC=?, DLKL=?, YCJE=?, DLRQ=? WHERE BRBH=?";
 
@@ -102,13 +102,14 @@ public class UserDao {
             statement.setString(1, user);
             statement.setString(2, pass);
             resultSet = statement.executeQuery();
-            if (!resultSet.wasNull()) {
+            if (resultSet != null && resultSet.next()) {
                 tBrxx = new T_BRXX();
-                tBrxx.setBRBH(resultSet.getString(0));
-                tBrxx.setBRMC(resultSet.getString(1));
-                tBrxx.setDLKL(resultSet.getString(2));
-                tBrxx.setDLRQ(resultSet.getDate(3));
+                tBrxx.setBRBH(resultSet.getString(1));
+                tBrxx.setBRMC(resultSet.getString(2));
+                tBrxx.setDLKL(resultSet.getString(3));
+                tBrxx.setDLRQ(resultSet.getTimestamp(5));
                 tBrxx.setYCJE(resultSet.getFloat(4));
+                LOGGER.debug(resultSet.getDate(5));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -139,7 +140,7 @@ public class UserDao {
                 tBrxx.setBRBH(resultSet.getString(0));
                 tBrxx.setBRMC(resultSet.getString(1));
                 tBrxx.setDLKL(resultSet.getString(2));
-                tBrxx.setDLRQ(resultSet.getDate(3));
+                tBrxx.setDLRQ(resultSet.getTimestamp(3));
                 tBrxx.setYCJE(resultSet.getFloat(4));
                 list.add(tBrxx);
             }
@@ -175,7 +176,7 @@ public class UserDao {
             statement.setString(2, t_brxx.getBRMC());
             statement.setString(3, t_brxx.getDLKL());
             statement.setFloat(4, t_brxx.getYCJE());
-            statement.setDate(5, t_brxx.getDLRQ());
+            statement.setTimestamp(5, t_brxx.getDLRQ());
             statement.execute();
             result = t_brxx;
         } catch (SQLException e) {
@@ -210,7 +211,7 @@ public class UserDao {
                 statement.setString(2, t_brxx.getBRMC());
                 statement.setString(3, t_brxx.getDLKL());
                 statement.setFloat(4, t_brxx.getYCJE());
-                statement.setDate(5, t_brxx.getDLRQ());
+                statement.setTimestamp(5, t_brxx.getDLRQ());
                 statement.execute();
             }
         } catch (SQLException e) {
@@ -245,7 +246,7 @@ public class UserDao {
             statement.setString(1, newOne.getBRMC());
             statement.setString(2, newOne.getDLKL());
             statement.setFloat(3, newOne.getYCJE());
-            statement.setDate(4, newOne.getDLRQ());
+            statement.setTimestamp(4, newOne.getDLRQ());
             statement.execute();
         } catch (SQLException e) {
             result = false;

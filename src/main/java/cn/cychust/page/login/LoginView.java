@@ -1,5 +1,6 @@
 package cn.cychust.page.login;
 
+import cn.cychust.mysql.DatabaseManager;
 import com.jfoenix.controls.JFXDecorator;
 import com.jfoenix.svg.SVGGlyphLoader;
 import io.datafx.controller.flow.Flow;
@@ -52,6 +53,14 @@ public class LoginView extends Application {
         primaryStage.show();
 
     }
+
+    @Override
+    public void stop() throws Exception {
+        DatabaseManager.getINSTANCE().getConnection().close();
+        super.stop();
+
+    }
+
     public static void main(String[] args){
         launch(args);
     }

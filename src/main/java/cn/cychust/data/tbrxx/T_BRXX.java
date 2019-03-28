@@ -1,6 +1,8 @@
 package cn.cychust.data.tbrxx;
 
 import java.sql.Date;
+import java.sql.Time;
+import java.sql.Timestamp;
 
 /**
  * @program: hospital-manager-system
@@ -14,9 +16,9 @@ public class T_BRXX {
     private String BRMC;    //病人名称
     private String DLKL;    //登录口令
     private float YCJE;    //病人预存金额
-    private Date DLRQ;      //最后一次登录信息
+    private Timestamp DLRQ;      //最后一次登录信息
 
-    public T_BRXX(String BRBH, String BRMC, String DLKL, float YCJE, Date DLRQ) {
+    public T_BRXX(String BRBH, String BRMC, String DLKL, float YCJE, Timestamp DLRQ) {
         this.BRBH = BRBH;
         this.BRMC = BRMC;
         this.DLKL = DLKL;
@@ -60,11 +62,11 @@ public class T_BRXX {
         this.YCJE = YCJE;
     }
 
-    public Date getDLRQ() {
+    public Timestamp getDLRQ() {
         return DLRQ;
     }
 
-    public void setDLRQ(Date DLRQ) {
+    public void setDLRQ(Timestamp DLRQ) {
         this.DLRQ = DLRQ;
     }
 
