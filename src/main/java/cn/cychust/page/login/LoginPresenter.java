@@ -4,6 +4,8 @@ import cn.cychust.base.BasePresenterImpl;
 import cn.cychust.data.tbrxx.T_BRXX;
 import cn.cychust.data.tbrxx.source.TBRXXDataSource;
 import cn.cychust.data.tbrxx.source.TBRXXRepository;
+import javafx.application.Platform;
+import sun.applet.Main;
 
 /**
  * @program: hospital-manager-system
@@ -22,15 +24,20 @@ public class LoginPresenter extends BasePresenterImpl implements LoginContract.P
     }
 
     public void login(String user, String pass) {
+        mView.logining();
         mTBRXXDataSource.getOne(user, pass, new TBRXXRepository.GetTbrxxCallback() {
             @Override
             public void onTasksLoaded(T_BRXX t_brxx) {
-
+                Platform.runLater(() -> {
+                    mView.loginSuccess();
+                });
             }
 
             @Override
             public void onDataNotAvailable() {
-
+                Platform.runLater(() -> {
+                    mView.loginFailed();
+                });
             }
         });
     }

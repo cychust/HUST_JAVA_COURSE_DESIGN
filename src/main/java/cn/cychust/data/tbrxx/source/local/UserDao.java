@@ -109,7 +109,6 @@ public class UserDao {
                 tBrxx.setDLKL(resultSet.getString(3));
                 tBrxx.setDLRQ(resultSet.getTimestamp(5));
                 tBrxx.setYCJE(resultSet.getFloat(4));
-                LOGGER.debug(resultSet.getDate(5));
             }
         } catch (SQLException e) {
             e.printStackTrace();

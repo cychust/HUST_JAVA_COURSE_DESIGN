@@ -1,6 +1,8 @@
 package cn.cychust.page.login;
 
+import cn.cychust.comm.Executor;
 import cn.cychust.mysql.DatabaseManager;
+import cn.cychust.page.main.MainController;
 import com.jfoenix.controls.JFXDecorator;
 import com.jfoenix.svg.SVGGlyphLoader;
 import io.datafx.controller.flow.Flow;
@@ -10,6 +12,7 @@ import io.datafx.controller.flow.context.ViewFlowContext;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 
@@ -20,6 +23,7 @@ import java.io.IOException;
  * @create: 2019-03-15 16:22
  **/
 public class LoginView extends Application {
+    private static final Logger LOGGER = Logger.getLogger(LoginView.class);
 
     @FXMLViewFlowContext
     private ViewFlowContext flowContext;
@@ -30,7 +34,7 @@ public class LoginView extends Application {
         initStage(primaryStage);
     }
 
-    private void initStage(Stage primaryStage) throws Exception{
+    private void initStage(Stage primaryStage) throws Exception {
         new Thread(() -> {
             try {
                 SVGGlyphLoader.loadGlyphsFont(LoginView.class.getResourceAsStream("/fonts/icomoon.svg"),
@@ -39,29 +43,30 @@ public class LoginView extends Application {
                 ioExc.printStackTrace();
             }
         }).start();
-        Flow flow=new Flow(LoginController.class);
+        Flow flow = new Flow(LoginController.class);
         DefaultFlowContainer container = new DefaultFlowContainer();
         flowContext = new ViewFlowContext();
         flowContext.register("Stage", primaryStage);
-        flow.createHandler(flowContext).start(container);
-        JFXDecorator decorator = new JFXDecorator(primaryStage, container.getView(),false, true, true);
+//        flow.createHandler(flowContext).start(container);
+        JFXDecorator decorator = new JFXDecorator(primaryStage, container.getView(), false, true, true);
         Scene scene = new Scene(decorator, 750, 500);
         primaryStage.setMinWidth(500);
         primaryStage.setMinHeight(400);
 //        primaryStage.setTitle("Demo");
         primaryStage.setScene(scene);
         primaryStage.show();
-
+        flow.createHandler(flowContext).start(container);
     }
 
     @Override
     public void stop() throws Exception {
-        DatabaseManager.getINSTANCE().getConnection().close();
         super.stop();
-
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception {
         launch(args);
+        DatabaseManager.getINSTANCE().getConnection().close();
+        Executor.getINSTANCE().getExecutor().shutdown();
+
     }
 }
