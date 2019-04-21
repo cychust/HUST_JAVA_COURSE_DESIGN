@@ -2,6 +2,7 @@ package cn.cychust.data.tbrxx.source.local;
 
 import cn.cychust.data.tbrxx.T_BRXX;
 import cn.cychust.data.tbrxx.source.TBRXXRepository;
+import cn.cychust.data.tbrxx.source.local.dao.UserDao;
 
 import java.util.List;
 import java.util.Optional;

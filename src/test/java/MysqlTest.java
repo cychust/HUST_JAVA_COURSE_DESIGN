@@ -2,11 +2,10 @@ import cn.cychust.comm.Executor;
 import cn.cychust.data.tbrxx.T_BRXX;
 import cn.cychust.data.tbrxx.source.TBRXXDataSource;
 import cn.cychust.data.tbrxx.source.TBRXXRepository;
-import cn.cychust.data.tbrxx.source.local.UserDao;
+import cn.cychust.data.tbrxx.source.local.dao.UserDao;
 import org.apache.log4j.Logger;
 import org.junit.*;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.concurrent.ExecutorService;
 

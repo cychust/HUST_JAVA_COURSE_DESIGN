@@ -340,3 +340,11 @@
     -fx-padding: 5 0 5 0;
 }
 
+/*snack bar*/
+.jfx-snackbar-content {
+    -fx-background-color: RED;
+}
+.jfx-snackbar-toast {
+    -fx-text-fill: WHITE;
+    -fx-font-size: 20;
+}

@@ -1,6 +1,7 @@
-package cn.cychust.data.tbrxx.source.local;
+package cn.cychust.data.tbrxx.source.local.dao;
 
 import cn.cychust.data.tbrxx.T_BRXX;
+import cn.cychust.data.tbrxx.T_KSXX;
 import cn.cychust.mysql.C3p0helper;
 import cn.cychust.mysql.DatabaseManager;
 import org.apache.log4j.Logger;
@@ -12,31 +13,29 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * @program: hospital-manager-system
+ * @program: HUST_JAVA_COURSE_DESIGN
  * @description:
  * @author: Yichao Chen
- * @create: 2019-03-22 16:26
+ * @create: 2019-04-21 23:23
  **/
-public class UserDao {
+public class KsxxDao extends Dao {
 
 
     private static final Logger LOGGER = Logger.getLogger(UserDao.class);
 
-    private final static String ADD_ONE_STATEMENT = "INSERT INTO T_BRXX (BRBH,BRMC,DLKL,YCJE,DLRQ) VALUES(?,?,?,?,?)";
-    private final static String FIND_ONE_BY_USER_AND_PASS = "SELECT * FROM T_BRXX WHERE BRBH = ? AND DLKL = ?";
+    private final static String ADD_ONE_STATEMENT = "INSERT INTO T_KSXX (KSBH,KSMC,PYZS) VALUES(?,?,?)";
+    private final static String FIND_ONE_BY_ID = "SELECT * FROM T_KSXX WHERE KSBH=?";
     private final static String CREATE_TABLE =
-            "CREATE TABLE IF NOT EXISTS T_BRXX(" +
-                    "BRBH CHAR(6) not NULL, " +
-                    "BRMC CHAR(10) not NULL, " +
-                    "DLKL CHAR(8) not NULL, " +
-                    "YCJE DECIMAL(10,2) not NULL, " +
-                    "DLRQ DateTime not NULL, " +
-                    "PRIMARY KEY ( BRBH )" +
+            "CREATE TABLE IF NOT EXISTS T_KSXX(" +
+                    "KSBH CHAR(6) not NULL, " +
+                    "KSMC CHAR(10) not NULL, " +
+                    "PYZS CHAR(8) not NULL, " +
+                    "PRIMARY KEY ( KSBH )" +
                     ")ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
-    private final static String FIND_ALL = "SELECT * FROM T_BRXX";
+    private final static String FIND_ALL = "SELECT * FROM T_KSXX";
 
-    private final static String UPDATE_ONE_BY_ID = "UPDATE T_BRXX SET BRMC=?, DLKL=?, YCJE=?, DLRQ=? WHERE BRBH=?";
+    private final static String UPDATE_ONE_BY_ID = "UPDATE T_KSXX SET KSMC=?, PYZS=? WHERE KSBH=?";
 
     /**
      * 创建表
@@ -44,71 +43,36 @@ public class UserDao {
      * @return
      */
     public static Optional<Boolean> createTable() {
-        boolean result = true;
-        Connection connection = null;
-        Statement statement = null;
-        try {
-            connection = DatabaseManager.getINSTANCE().getConnection();
-            statement = connection.createStatement();
-            statement.executeUpdate(CREATE_TABLE);
-        } catch (SQLException e) {
-            result = false;
-            e.printStackTrace();
-        } catch (PropertyVetoException e) {
-            result = false;
-            e.printStackTrace();
-        } finally {
-            C3p0helper.attemptClose(statement);
-            C3p0helper.attemptClose(connection);
-        }
-        return Optional.of(result);
+        return Dao.createTable(CREATE_TABLE);
     }
-
-    public static ResultSet findAllUser() {
-        ResultSet resultSet = null;
-        Connection connection = null;
-        try {
-            connection = DatabaseManager.getINSTANCE().getConnection();
-            resultSet = connection.createStatement().executeQuery(FIND_ALL);
-            while (resultSet.next()) {
-                LOGGER.info(resultSet.getObject(1));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (PropertyVetoException e) {
-            e.printStackTrace();
-        } finally {
-            C3p0helper.attemptClose(resultSet);
-            C3p0helper.attemptClose(connection);
-        }
-        return resultSet;
-    }
+//
+//    public static ResultSet findAllUser() {
+//        return Dao.findAll(FIND_ALL);
+//    }
 
     /**
-     * 根据 user pass 查找
-     *
-     * @param user
-     * @param pass
-     * @return
-     */
-    public static Optional<T_BRXX> findOne(String user, String pass) {
-        T_BRXX tBrxx = null;
+     * @Description: 根据id查找
+     * @Param: [id]
+     * @return: java.util.Optional<cn.cychust.data.tbrxx.T_BRXX>
+     * @Author: Yichao Chen
+     * @Date: 19-4-21
+     * @Time: 下午11:33
+     **/
+    public static Optional<T_KSXX> findOne(String id) {
+        T_KSXX tKsxx = null;
         ResultSet resultSet = null;
         Connection connection = null;
         PreparedStatement statement = null;
         try {
             connection = DatabaseManager.getINSTANCE().getConnection();
-            statement = connection.prepareStatement(FIND_ONE_BY_USER_AND_PASS);
-            statement.setString(1, user);
-            statement.setString(2, pass);
+            statement = connection.prepareStatement(FIND_ONE_BY_ID);
+            statement.setString(1, id);
             resultSet = statement.executeQuery();
             if (resultSet != null && resultSet.next()) {
-                tBrxx = new T_BRXX();
-                tBrxx.setBRBH(resultSet.getString(1));
-                tBrxx.setBRMC(resultSet.getString(2));
-                tBrxx.setDLKL(resultSet.getString(3));
-                tBrxx.setDLRQ(resultSet.getTimestamp(5));
-                tBrxx.setYCJE(resultSet.getFloat(4));
+                tKsxx = new T_KSXX();
+                tKsxx.setKSBH(resultSet.getString(1));
+                tKsxx.setKSMC(resultSet.getString(2));
+                tKsxx.setPYZC(resultSet.getString(3));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -119,7 +83,7 @@ public class UserDao {
             C3p0helper.attemptClose(statement);
             C3p0helper.attemptClose(connection);
         }
-        return Optional.ofNullable(tBrxx);
+        return Optional.ofNullable(tKsxx);
     }
 
     /**
@@ -127,21 +91,19 @@ public class UserDao {
      *
      * @return
      */
-    public static Optional<List<T_BRXX>> findAll() {
-        List<T_BRXX> list = new ArrayList<>();
+    public static Optional<List<T_KSXX>> findAll() {
+        List<T_KSXX> list = new ArrayList<>();
         ResultSet resultSet = null;
         Connection connection = null;
         try {
             connection = DatabaseManager.getINSTANCE().getConnection();
             resultSet = connection.createStatement().executeQuery("select  * from  t_brxx");
             while (resultSet.next()) {
-                T_BRXX tBrxx = new T_BRXX();
-                tBrxx.setBRBH(resultSet.getString(0));
-                tBrxx.setBRMC(resultSet.getString(1));
-                tBrxx.setDLKL(resultSet.getString(2));
-                tBrxx.setDLRQ(resultSet.getTimestamp(3));
-                tBrxx.setYCJE(resultSet.getFloat(4));
-                list.add(tBrxx);
+                T_KSXX tKsxx = new T_KSXX();
+                tKsxx.setKSBH(resultSet.getString(0));
+                tKsxx.setKSMC(resultSet.getString(1));
+                tKsxx.setPYZC(resultSet.getString(2));
+                list.add(tKsxx);
             }
         } catch (SQLException e) {
             e.printStackTrace();

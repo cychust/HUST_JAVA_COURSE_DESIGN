@@ -34,7 +34,6 @@ public final class LoginController implements LoginContract.View {
     @FXML
     private AnchorPane container;
 
-
     private LoginContract.Presenter mPresenter;
     @FXML
     private JFXButton btn_start;
@@ -51,6 +50,18 @@ public final class LoginController implements LoginContract.View {
     @FXML
     private JFXPasswordField tf_password;
 
+    @FXML
+    private JFXRadioButton rb_duzhe;
+
+    @FXML
+    private JFXRadioButton rb_gzry;
+    private boolean isDuZhe;
+
+//    private boolean isRememberPassword;
+
+
+    @FXML
+    private JFXCheckBox cb_rememberInfo;//是否记住密码
 
     @ActionHandler
     private FlowActionHandler actionHandler;
@@ -70,6 +81,18 @@ public final class LoginController implements LoginContract.View {
             }
             mPresenter.login(tf_username.getText(), tf_password.getText());
         });
+
+        rb_duzhe.setSelected(true);
+        isDuZhe = true;
+        //选择读者身份
+        rb_duzhe.setOnMouseClicked(a -> {
+            isDuZhe = true;
+        });
+        //选择工作人员
+        rb_gzry.setOnMouseClicked(a -> {
+            isDuZhe = false;
+        });
+
 
         initializeFields();
     }
@@ -108,7 +131,11 @@ public final class LoginController implements LoginContract.View {
     @Override
     public void loginSuccess() {
         prgs_login.setSecondaryProgress(1.0);
+        if (cb_rememberInfo.isFocused()) {
+
+        }
         lb_progress.setText("100.0%");
+
         try {
             navigateToHome();
         } catch (VetoException | FlowException e) {
@@ -121,6 +148,8 @@ public final class LoginController implements LoginContract.View {
         prgs_login.setSecondaryProgress(0.0);
         lb_progress.setText("0.0%");
         JFXSnackbar snackbar = new JFXSnackbar(container);
+//        snackbar.setStyle("-fx-text-fill: BLUE");
+        snackbar.setStyle("-fx-background-color: #000000;-fx-text-fill: #ffffff");
         snackbar.fireEvent(new JFXSnackbar.SnackbarEvent(new JFXSnackbarLayout("失败"), Duration.millis(3000), null));
     }
 
