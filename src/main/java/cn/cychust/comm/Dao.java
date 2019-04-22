@@ -1,4 +1,4 @@
-package cn.cychust.data.tbrxx.source.local.dao;
+package cn.cychust.comm;
 
 import cn.cychust.mysql.C3p0helper;
 import cn.cychust.mysql.DatabaseManager;
@@ -38,23 +38,23 @@ public class Dao{
         }
         return Optional.of(result);
     }
-    public static ResultSet findAll(String findAllStatement){
-        ResultSet resultSet = null;
-        Connection connection = null;
-        try {
-            connection = DatabaseManager.getINSTANCE().getConnection();
-            resultSet = connection.createStatement().executeQuery(findAllStatement);
-            while (resultSet.next()) {
-//                LOGGER.info(resultSet.getObject(1));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (PropertyVetoException e) {
-            e.printStackTrace();
-        } finally {
-            C3p0helper.attemptClose(resultSet);
-            C3p0helper.attemptClose(connection);
-        }
-        return resultSet;
-    }
+//    public static ResultSet findAll(String findAllStatement){
+//        ResultSet resultSet = null;
+//        Connection connection = null;
+//        try {
+//            connection = DatabaseManager.getINSTANCE().getConnection();
+//            resultSet = connection.createStatement().executeQuery(findAllStatement);
+//            while (resultSet.next()) {
+////                LOGGER.info(resultSet.getObject(1));
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        } catch (PropertyVetoException e) {
+//            e.printStackTrace();
+//        } finally {
+//            C3p0helper.attemptClose(resultSet);
+//            C3p0helper.attemptClose(connection);
+//        }
+//        return resultSet;
+//    }
 }

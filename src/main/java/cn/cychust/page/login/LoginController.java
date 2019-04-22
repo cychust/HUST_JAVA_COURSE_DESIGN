@@ -1,8 +1,9 @@
 package cn.cychust.page.login;
 
-import cn.cychust.comm.Executor;
 import cn.cychust.data.tbrxx.source.TBRXXDataSource;
-import cn.cychust.page.main.MainController;
+import cn.cychust.data.tksys.source.TKSYSDataSource;
+import cn.cychust.page.main.doctor.DoctorController;
+import cn.cychust.page.main.patient.PatientController;
 import com.jfoenix.controls.*;
 import com.jfoenix.validation.RequiredFieldValidator;
 import de.jensd.fx.glyphs.GlyphsBuilder;
@@ -55,7 +56,7 @@ public final class LoginController implements LoginContract.View {
 
     @FXML
     private JFXRadioButton rb_gzry;
-    private boolean isDuZhe;
+    private boolean isBR;
 
 //    private boolean isRememberPassword;
 
@@ -69,7 +70,7 @@ public final class LoginController implements LoginContract.View {
     @PostConstruct
     public void init() throws Exception {
 
-        setPresenter(new LoginPresenter(this, new TBRXXDataSource(Executor.getINSTANCE().getExecutor())));
+        setPresenter(new LoginPresenter(this, new TBRXXDataSource(), TKSYSDataSource.getINSTANCE()));
         btn_start.setOnMouseClicked(e -> {
             if (tf_username.getText() == null || tf_username.getText().length() == 0) {
                 tf_username.validate();
@@ -79,18 +80,18 @@ public final class LoginController implements LoginContract.View {
                 tf_password.validate();
                 return;
             }
-            mPresenter.login(tf_username.getText(), tf_password.getText());
+            mPresenter.login(tf_username.getText(), tf_password.getText(), isBR);
         });
 
         rb_duzhe.setSelected(true);
-        isDuZhe = true;
+        isBR = true;
         //选择读者身份
         rb_duzhe.setOnMouseClicked(a -> {
-            isDuZhe = true;
+            isBR = true;
         });
         //选择工作人员
         rb_gzry.setOnMouseClicked(a -> {
-            isDuZhe = false;
+            isBR = false;
         });
 
 
@@ -137,7 +138,10 @@ public final class LoginController implements LoginContract.View {
         lb_progress.setText("100.0%");
 
         try {
-            navigateToHome();
+            if (isBR)
+                navigateToPatientHome();
+            else
+                navigateToDoctorHome();
         } catch (VetoException | FlowException e) {
             e.printStackTrace();
         }
@@ -165,7 +169,12 @@ public final class LoginController implements LoginContract.View {
     }
 
 
-    private void navigateToHome() throws VetoException, FlowException {
-        actionHandler.navigate(MainController.class);
+    private void navigateToPatientHome() throws VetoException, FlowException {
+        actionHandler.navigate(PatientController.class);
     }
+
+    private void navigateToDoctorHome() throws VetoException, FlowException {
+        actionHandler.navigate(DoctorController.class);
+    }
+
 }

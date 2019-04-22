@@ -1,5 +1,6 @@
 package cn.cychust.data.tbrxx.source.local;
 
+import cn.cychust.comm.Executor;
 import cn.cychust.data.tbrxx.T_BRXX;
 import cn.cychust.data.tbrxx.source.TBRXXRepository;
 import cn.cychust.data.tbrxx.source.local.dao.UserDao;
@@ -20,15 +21,15 @@ public class BrxxLocalDataSource implements TBRXXRepository {
 
     private ExecutorService executor;
 
-    private BrxxLocalDataSource(ExecutorService executor) {
-        this.executor = executor;
+    private BrxxLocalDataSource() {
+        this.executor = Executor.getINSTANCE().getExecutor();
     }
 
-    public static BrxxLocalDataSource getINSTANCE(ExecutorService executor) {
+    public static BrxxLocalDataSource getINSTANCE() {
         if (INSTANCE == null) {
             synchronized (BrxxLocalDataSource.class) {
                 if (INSTANCE == null) {
-                    INSTANCE = new BrxxLocalDataSource(executor);
+                    INSTANCE = new BrxxLocalDataSource();
                 }
             }
         }
@@ -82,7 +83,6 @@ public class BrxxLocalDataSource implements TBRXXRepository {
         };
         executor.execute(runnable);
     }
-
 
 
     //    @Override

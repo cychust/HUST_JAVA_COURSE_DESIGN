@@ -19,7 +19,7 @@ public class LoginContract {
     }
 
     public interface Presenter extends BasePresenter {
-        void login(String user, String pass);
+        void login(String user, String pass,boolean isDuZhe);
 
         void register();
     }

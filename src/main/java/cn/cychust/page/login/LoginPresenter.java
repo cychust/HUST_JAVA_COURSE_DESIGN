@@ -4,8 +4,9 @@ import cn.cychust.base.BasePresenterImpl;
 import cn.cychust.data.tbrxx.T_BRXX;
 import cn.cychust.data.tbrxx.source.TBRXXDataSource;
 import cn.cychust.data.tbrxx.source.TBRXXRepository;
-import javafx.application.Platform;
-import sun.applet.Main;
+import cn.cychust.data.tksys.T_KSYS;
+import cn.cychust.data.tksys.source.TKSYSDataSource;
+import cn.cychust.data.tksys.source.TKSYSRepository;
 
 /**
  * @program: hospital-manager-system
@@ -17,29 +18,41 @@ public class LoginPresenter extends BasePresenterImpl implements LoginContract.P
     private LoginContract.View mView;
     private TBRXXDataSource mTBRXXDataSource;
 
-    public LoginPresenter(LoginContract.View view, TBRXXDataSource TBRXXDataSource) {
+    private TKSYSDataSource mTksysDataSource;
+
+    public LoginPresenter(LoginContract.View view, TBRXXDataSource tbrxxDataSource, TKSYSDataSource tKSYSDataSource) {
         mView = view;
-        mTBRXXDataSource = TBRXXDataSource;
+        mTBRXXDataSource = tbrxxDataSource;
+        mTksysDataSource = tKSYSDataSource;
         mView.setPresenter(this);
     }
 
-    public void login(String user, String pass) {
+    public void login(String user, String pass, boolean isBR) {
         mView.logining();
-        mTBRXXDataSource.getOne(user, pass, new TBRXXRepository.GetTbrxxCallback() {
-            @Override
-            public void onTasksLoaded(T_BRXX t_brxx) {
-                Platform.runLater(() -> {
+        if (isBR)
+            mTBRXXDataSource.getOne(user, pass, new TBRXXRepository.GetTbrxxCallback() {
+                @Override
+                public void onTasksLoaded(T_BRXX t_brxx) {
                     mView.loginSuccess();
-                });
-            }
+                }
 
-            @Override
-            public void onDataNotAvailable() {
-                Platform.runLater(() -> {
+                @Override
+                public void onDataNotAvailable() {
                     mView.loginFailed();
-                });
-            }
-        });
+                }
+            });
+        else
+            mTksysDataSource.getOne(user, pass, new TKSYSRepository.GetTbrxxCallback() {
+                @Override
+                public void onTasksLoaded(T_KSYS t_brxx) {
+                    mView.loginSuccess();
+                }
+
+                @Override
+                public void onDataNotAvailable() {
+                    mView.loginFailed();
+                }
+            });
     }
 
     public void register() {

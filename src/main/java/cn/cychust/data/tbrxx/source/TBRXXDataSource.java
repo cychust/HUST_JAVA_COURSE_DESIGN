@@ -3,6 +3,7 @@ package cn.cychust.data.tbrxx.source;
 import cn.cychust.comm.Executor;
 import cn.cychust.data.tbrxx.T_BRXX;
 import cn.cychust.data.tbrxx.source.local.BrxxLocalDataSource;
+import javafx.application.Platform;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -20,8 +21,8 @@ public class TBRXXDataSource implements TBRXXRepository {
 
     private BrxxLocalDataSource brxxLocalDataSource;
 
-    public TBRXXDataSource(ExecutorService executorService) {
-        this.brxxLocalDataSource = BrxxLocalDataSource.getINSTANCE(executorService);
+    public TBRXXDataSource() {
+        this.brxxLocalDataSource = BrxxLocalDataSource.getINSTANCE();
     }
 
 
@@ -30,12 +31,12 @@ public class TBRXXDataSource implements TBRXXRepository {
         brxxLocalDataSource.getOne(userId, password, new GetTbrxxCallback() {
             @Override
             public void onTasksLoaded(T_BRXX t_brxx) {
-                callback.onTasksLoaded(t_brxx);
+                Platform.runLater(() -> callback.onTasksLoaded(t_brxx));
             }
 
             @Override
             public void onDataNotAvailable() {
-                callback.onDataNotAvailable();
+                Platform.runLater(() -> callback.onDataNotAvailable());
             }
         });
     }

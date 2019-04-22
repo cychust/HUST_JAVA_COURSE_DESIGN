@@ -49,7 +49,7 @@ public class MainWindow extends Application {
         flowContext.register("Stage", primaryStage);
 //        flow.createHandler(flowContext).start(container);
         JFXDecorator decorator = new JFXDecorator(primaryStage, container.getView(), false, true, true);
-        Scene scene = new Scene(decorator, 750, 500);
+        Scene scene = new Scene(decorator, 730, 520);
         primaryStage.setMinWidth(500);
         primaryStage.setMinHeight(400);
 //        primaryStage.setTitle("Demo");

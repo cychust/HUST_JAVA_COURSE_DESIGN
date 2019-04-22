@@ -1,5 +1,6 @@
 package cn.cychust.data.tbrxx.source.local.dao;
 
+import cn.cychust.comm.Dao;
 import cn.cychust.data.tbrxx.T_BRXX;
 import cn.cychust.mysql.C3p0helper;
 import cn.cychust.mysql.DatabaseManager;

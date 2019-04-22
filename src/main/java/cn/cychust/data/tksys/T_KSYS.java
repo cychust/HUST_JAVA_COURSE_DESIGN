@@ -1,4 +1,4 @@
-package cn.cychust.data.tbrxx;
+package cn.cychust.data.tksys;
 
 import java.sql.Timestamp;
 
@@ -16,6 +16,9 @@ public class T_KSYS {
     private String DLKL;
     private boolean SFZJ;
     private Timestamp DLRQ;
+
+    public T_KSYS() {
+    }
 
     public T_KSYS(String YSBH, String KSBH, String YSMC, String PYZS, String DLKL, boolean SFZJ, Timestamp DLRQ) {
         this.YSBH = YSBH;

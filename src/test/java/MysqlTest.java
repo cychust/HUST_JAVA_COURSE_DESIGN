@@ -1,8 +1,8 @@
 import cn.cychust.comm.Executor;
-import cn.cychust.data.tbrxx.T_BRXX;
-import cn.cychust.data.tbrxx.source.TBRXXDataSource;
-import cn.cychust.data.tbrxx.source.TBRXXRepository;
 import cn.cychust.data.tbrxx.source.local.dao.UserDao;
+import cn.cychust.data.tksys.T_KSYS;
+import cn.cychust.data.tksys.source.TKSYSDataSource;
+import cn.cychust.data.tksys.source.TKSYSRepository;
 import org.apache.log4j.Logger;
 import org.junit.*;
 
@@ -32,10 +32,15 @@ public class MysqlTest {
 
     @Test
     public void testCreateTable() {
-        Timestamp date = Timestamp.valueOf("2018-09-12");
+        TKSYSDataSource.getINSTANCE().createTable();
+    }
 
-        T_BRXX one = new T_BRXX("111111", "1111", "11111", 1, date);
-        new TBRXXDataSource(service).saveOne(one);
+    @Test
+    public void saveOne() {
+        Timestamp date = Timestamp.valueOf("2018-09-12 12:17:00");
+
+        T_KSYS one = new T_KSYS("111", "1111", "11111", "1111", ",111111", true, date);
+        TKSYSDataSource.getINSTANCE().saveOne(one);
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -45,9 +50,9 @@ public class MysqlTest {
 
     @Test
     public void testGetOne() {
-        new TBRXXDataSource(service).getOne("111", "11111", new TBRXXRepository.GetTbrxxCallback() {
+        TKSYSDataSource.getINSTANCE().getOne("111", "11111", new TKSYSRepository.GetTbrxxCallback() {
             @Override
-            public void onTasksLoaded(T_BRXX t_brxx) {
+            public void onTasksLoaded(T_KSYS t_brxx) {
                 logger.debug(t_brxx);
             }
 
@@ -70,6 +75,7 @@ public class MysqlTest {
     @AfterClass
     public static void destory() {
         service.shutdown();
+
     }
 
 }
