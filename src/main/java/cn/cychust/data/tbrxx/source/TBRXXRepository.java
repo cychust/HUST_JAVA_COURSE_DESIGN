@@ -4,6 +4,7 @@ package cn.cychust.data.tbrxx.source;
 import cn.cychust.data.tbrxx.T_BRXX;
 import io.reactivex.annotations.NonNull;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -25,6 +26,7 @@ public interface TBRXXRepository {
     void saveAll(List<T_BRXX> brxxList);
 
     void deleteOne(String id);
+
 
     void createTable();
 

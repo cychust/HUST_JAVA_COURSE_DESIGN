@@ -2,6 +2,7 @@ package cn.cychust.data.tksys.source.local;
 
 import cn.cychust.comm.Dao;
 import cn.cychust.data.tbrxx.T_BRXX;
+import cn.cychust.data.tksxx.T_KSXX;
 import cn.cychust.data.tksys.T_KSYS;
 import cn.cychust.mysql.C3p0helper;
 import cn.cychust.mysql.DatabaseManager;
@@ -11,6 +12,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -35,7 +38,11 @@ public class KsysDao extends Dao {
     private final static String FIND_ALL = "";
     private final static String FIND_ONE_BY_USER_AND_PASS = "SELECT * FROM T_KSYS WHERE YSBH = ? AND DLKL = ?";
 
+    private final static String FIND_ONE_BY_USER = "SELECT * FROM T_KSYS WHERE YSBH = ?";
+
     private final static String ADD_ONE_STATEMENT = "INSERT INTO T_KSYS (YSBH,KSBH,YSMC,PYZS,DLKL,SFZJ,DLRQ) VALUES(?,?,?,?,?,?,?)";
+
+    private final static String FIND_ALL_BY_KSBH = "SELECT * FROM T_KSYS WHERE KSBH = ?";
 
     public static Optional<Boolean> createTable() {
         return createTable(CREATE_TABLE);
@@ -72,6 +79,71 @@ public class KsysDao extends Dao {
             C3p0helper.attemptClose(connection);
         }
         return Optional.ofNullable(tKsys);
+    }
+
+    public static Optional<T_KSYS> findOne(String usr) {
+        T_KSYS tKsys = null;
+        ResultSet resultSet = null;
+        Connection connection = null;
+        PreparedStatement statement = null;
+        try {
+            connection = DatabaseManager.getINSTANCE().getConnection();
+            statement = connection.prepareStatement(FIND_ONE_BY_USER);
+            statement.setString(1, usr);
+            resultSet = statement.executeQuery();
+            if (resultSet != null && resultSet.next()) {
+                tKsys = new T_KSYS();
+                tKsys.setYSBH(resultSet.getString(1));
+                tKsys.setKSBH(resultSet.getString(2));
+                tKsys.setYSMC(resultSet.getString(3));
+                tKsys.setPYZS(resultSet.getString(4));
+                tKsys.setDLKL(resultSet.getString(5));
+                tKsys.setSFZJ(resultSet.getBoolean(6));
+                tKsys.setDLRQ(resultSet.getTimestamp(7));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (PropertyVetoException e) {
+            e.printStackTrace();
+        } finally {
+            C3p0helper.attemptClose(resultSet);
+            C3p0helper.attemptClose(statement);
+            C3p0helper.attemptClose(connection);
+        }
+        return Optional.ofNullable(tKsys);
+    }
+
+
+    public static Optional findAllByKSBH(String ksbh) {
+        List<T_KSYS> list = new ArrayList<>();
+        ResultSet resultSet = null;
+        Connection connection = null;
+        PreparedStatement statement = null;
+        try {
+            connection = DatabaseManager.getINSTANCE().getConnection();
+            statement = connection.prepareStatement(FIND_ALL_BY_KSBH);
+            statement.setString(1, ksbh);
+            resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                T_KSYS tKsys = new T_KSYS();
+                tKsys.setYSBH(resultSet.getString(1));
+                tKsys.setKSBH(resultSet.getString(2));
+                tKsys.setYSMC(resultSet.getString(3));
+                tKsys.setPYZS(resultSet.getString(4));
+                tKsys.setDLKL(resultSet.getString(5));
+                tKsys.setSFZJ(resultSet.getBoolean(6));
+                tKsys.setDLRQ(resultSet.getTimestamp(7));
+                list.add(tKsys);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (PropertyVetoException e) {
+            e.printStackTrace();
+        } finally {
+            C3p0helper.attemptClose(resultSet);
+            C3p0helper.attemptClose(connection);
+        }
+        return Optional.ofNullable(list);
     }
 
     public static Optional<T_KSYS> saveOne(T_KSYS t_ksys) {

@@ -20,21 +20,26 @@ import javax.annotation.PostConstruct;
  * @create: 2019-04-21 20:48
  **/
 @ViewController(value = "/fxml/main_doctor.fxml")
-public class DoctorController {
+public final class DoctorController implements DoctorContract.View {
     @FXML
     private JFXButton btn_logout;
 
+    private DoctorContract.Presenter mPresenter;
 
     @ActionHandler
     private FlowActionHandler actionHandler;
 
     @PostConstruct
     public void init() throws Exception {
+
+        setPresenter(new DoctorPresenter(this));
+
         btn_logout.setGraphic(new ImageView(new Image("/images/logout.png")));
         btn_logout.setMaxHeight(40);
         btn_logout.setMaxWidth(40);
         btn_logout.setOnMouseClicked(e -> {
             try {
+                mPresenter.logout();
                 navigateToLogin();
             } catch (VetoException | FlowException exception) {
                 exception.printStackTrace();
@@ -46,4 +51,8 @@ public class DoctorController {
         actionHandler.navigate(LoginController.class);
     }
 
+    @Override
+    public void setPresenter(DoctorContract.Presenter presenter) {
+        mPresenter = presenter;
+    }
 }

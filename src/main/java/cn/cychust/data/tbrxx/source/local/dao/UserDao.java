@@ -154,7 +154,7 @@ public class UserDao {
             C3p0helper.attemptClose(statement);
             C3p0helper.attemptClose(connection);
         }
-        return Optional.of(result);
+        return result == null ? Optional.empty() : Optional.of(result);
     }
 
 

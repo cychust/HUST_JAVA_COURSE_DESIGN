@@ -2,39 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18c70c67-edb5-4d15-8caa-da98c18cd339" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/TKSXXDataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/TKSXXRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSDataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/local/KsysDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/patient/PatientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/main_doctor.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/main_patient.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/Identity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/State.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tghxx/source/TGHXXDataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tghxx/source/TGHXXRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tghxx/source/dao/GhxxDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/thzxx/source/THZXXRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/thzxx/source/dao/HzxxDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/doctor/DoctorContract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/doctor/DoctorPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/guahao/GuaHaoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/patient/PatientContract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/patient/PatientPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/main_gh.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/T_KSXX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/T_KSXX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/T_KSYS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/T_KSYS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/T_GHXX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tghxx/T_GHXX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/T_HZXX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/thzxx/T_HZXX.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/TBRXXDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/TBRXXDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/TBRXXRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/TBRXXRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/local/BrxxLocalDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/local/BrxxLocalDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/local/dao/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/comm/Dao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/local/dao/KsxxDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/local/KsxxDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/local/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/local/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/TKSXXDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/TKSXXDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/TKSXXRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/TKSXXRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/local/KsxxDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/local/KsxxDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/local/KsysDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/local/KsysDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/mysql/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/mysql/DatabaseManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/page/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/page/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/doctor/DoctorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/doctor/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/doctor/DoctorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/patient/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/patient/PatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/main_patient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/main_patient.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/MysqlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MysqlTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/data/tbrxx/T_GHXX.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/data/tbrxx/T_HZXX.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/data/tbrxx/source/TBRXXDataSource$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/data/tbrxx/source/TBRXXDataSource$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/data/tbrxx/source/TBRXXDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/data/tbrxx/source/TBRXXDataSource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/data/tbrxx/source/local/BrxxLocalDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/data/tbrxx/source/local/BrxxLocalDataSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/data/tbrxx/source/local/UserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/page/login/LoginContract$Presenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/page/login/LoginContract$Presenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/page/login/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/page/login/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/data/tbrxx/source/local/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/data/tbrxx/source/local/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/data/tksxx/source/TKSXXDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/data/tksxx/source/TKSXXDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/data/tksxx/source/TKSXXRepository$LoadTksxxsCallback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/data/tksxx/source/TKSXXRepository$LoadTksxxsCallback.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/data/tksxx/source/local/KsxxDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/data/tksxx/source/local/KsxxDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/data/tksys/source/TKSYSDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/data/tksys/source/TKSYSDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/data/tksys/source/TKSYSRepository$GetTbrxxCallback.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/data/tksys/source/TKSYSRepository$LoadTbrxxsCallback.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/data/tksys/source/TKSYSRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/data/tksys/source/TKSYSRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/data/tksys/source/local/KsysDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/data/tksys/source/local/KsysDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/mysql/DatabaseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/mysql/DatabaseManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/page/MainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/page/MainWindow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/page/login/LoginPresenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/page/login/LoginPresenter$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/page/login/LoginPresenter$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/page/login/LoginPresenter$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/page/login/LoginPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/page/login/LoginPresenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/page/main/MainController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/page/main/doctor/DoctorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/page/main/doctor/DoctorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/page/main/patient/PatientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/page/main/patient/PatientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/main_patient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/main_patient.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/MysqlTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MysqlTest$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/MysqlTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MysqlTest.class" afterDir="false" />
     </list>
@@ -66,15 +89,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TKSYSDataSource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSDataSource.java">
+      <file leaf-file-name="GuaHaoController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/main/guahao/GuaHaoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="62" column="36" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
+            <state relative-caret-position="321">
+              <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#469#470#0" expanded="true" />
-                <element signature="e#492#493#0" expanded="true" />
+                <element signature="e#3118#3119#0" expanded="true" />
+                <element signature="e#3220#3221#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="THZXXDatasource.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/thzxx/source/THZXXDatasource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="THZXXRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/thzxx/source/THZXXRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HzxxDao.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/thzxx/source/dao/HzxxDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KsxxDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/local/KsxxDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1080">
+              <caret line="101" column="74" selection-start-line="101" selection-start-column="74" selection-end-line="101" selection-end-column="74" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,16 +145,12 @@
       <file leaf-file-name="LoginPresenter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+            <state relative-caret-position="483">
+              <caret line="57" column="86" selection-start-line="57" selection-start-column="86" selection-end-line="57" selection-end-column="86" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1015#1016#0" expanded="true" />
-                <element signature="e#1067#1068#0" expanded="true" />
-                <element signature="e#1655#1656#0" expanded="true" />
-                <element signature="e#1715#1716#0" expanded="true" />
-                <element signature="e#1793#1794#0" expanded="true" />
-                <element signature="e#1852#1853#0" expanded="true" />
+                <element signature="e#2400#2401#0" expanded="true" />
+                <element signature="e#2459#2460#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,20 +159,8 @@
       <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DoctorController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/main/doctor/DoctorController.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="321">
-              <caret line="32" column="2" selection-start-line="32" selection-start-column="2" selection-end-line="34" selection-end-column="35" />
+              <caret line="172" column="56" lean-forward="true" selection-start-line="172" selection-start-column="56" selection-end-line="172" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,24 +168,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TKSYSDataSource.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSDataSource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TKSYSRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="51" column="51" selection-start-line="51" selection-start-column="51" selection-end-line="51" selection-end-column="51" />
+            <state relative-caret-position="285">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/login.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="-288">
-              <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -151,7 +211,9 @@
       <list>
         <option value="package-info" />
         <option value="CSS File" />
+        <option value="Enum" />
         <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -186,20 +248,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/bean/T_BRXX.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/source/local/userDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/source/local/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/Repository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/source/local/LoginClient.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/RepositorySource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/Repository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/TBRXXDataSource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/TBRXXDataTBRXX.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/comm/Executor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/base/BasePresenterImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/T_BRXX.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/login_tmp.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/local/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/MainController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/css/jfoenix-componets.css" />
@@ -210,33 +258,47 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/T_GHXX.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/T_KSXX.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/local/dao/Dao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/local/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/local/dao/KsxxDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/local/KsxxLocalDataSource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/TBRXXRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/local/TKSXXDataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/local/dao/KsxxDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/local/KsxxLocalDataSource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/TKSXXRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/TKSXXDataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/cychust/comm/Dao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/T_KSYS.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginContract.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/TBRXXDataSource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/local/BrxxLocalDataSource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginPresenter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/local/KsysDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSDataSource.java" />
-        <option value="$PROJECT_DIR$/src/test/java/MysqlTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/patient_main.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/main_doctor.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/Identity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/doctor/DoctorContract.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/doctor/DoctorController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/doctor/DoctorPresenter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/patient/PatientContract.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/patient/PatientPresenter.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/patient/PatientController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/main_patient.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/main_doctor.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tghxx/source/TGHXXRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tghxx/source/dao/GhxxDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tghxx/source/TGHXXDataSource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/mysql/DatabaseManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/TBRXXRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/local/BrxxLocalDataSource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/TBRXXDataSource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/State.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/local/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/TKSXXRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/local/KsxxDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/TKSXXDataSource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginPresenter.java" />
+        <option value="$PROJECT_DIR$/src/test/java/MysqlTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/main_gh.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSDataSource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/local/KsysDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/cychust/page/MainWindow.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/page/main/guahao/GuaHaoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/cychust/data/thzxx/source/dao/HzxxDao.java" />
       </list>
     </option>
   </component>
@@ -331,6 +393,81 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="cychust" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUST_JAVA_COURSE_DESIGN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HUST_JAVA_COURSE_DESIGN" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cychust" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="thzxx" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUST_JAVA_COURSE_DESIGN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HUST_JAVA_COURSE_DESIGN" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cychust" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="thzxx" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUST_JAVA_COURSE_DESIGN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HUST_JAVA_COURSE_DESIGN" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cychust" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="thzxx" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUST_JAVA_COURSE_DESIGN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HUST_JAVA_COURSE_DESIGN" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cychust" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="tksxx" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUST_JAVA_COURSE_DESIGN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HUST_JAVA_COURSE_DESIGN" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cychust" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="tksxx" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUST_JAVA_COURSE_DESIGN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HUST_JAVA_COURSE_DESIGN" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cychust" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="tksxx" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="local" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUST_JAVA_COURSE_DESIGN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HUST_JAVA_COURSE_DESIGN" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cychust" type="462c0819:PsiDirectoryNode" />
               <item name="page" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -348,6 +485,27 @@
               <item name="HUST_JAVA_COURSE_DESIGN" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cychust" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUST_JAVA_COURSE_DESIGN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HUST_JAVA_COURSE_DESIGN" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cychust" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="guahao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUST_JAVA_COURSE_DESIGN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HUST_JAVA_COURSE_DESIGN" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -357,14 +515,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="fxml" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HUST_JAVA_COURSE_DESIGN" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HUST_JAVA_COURSE_DESIGN" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HUST_JAVA_COURSE_DESIGN" type="b2602c69:ProjectViewProjectNode" />
@@ -396,7 +546,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -475,13 +625,13 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="MysqlTest.testGetOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MysqlTest.testGetAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hospital-manager-system" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MysqlTest" />
-      <option name="METHOD_NAME" value="testGetOne" />
+      <option name="METHOD_NAME" value="testGetAll" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -533,17 +683,17 @@
     <list>
       <item itemvalue="Application.LoginView" />
       <item itemvalue="JUnit.MysqlTest.testCreateTable" />
-      <item itemvalue="JUnit.MysqlTest.testGetOne" />
       <item itemvalue="Application.MainWindow" />
       <item itemvalue="JUnit.MysqlTest.saveOne" />
+      <item itemvalue="JUnit.MysqlTest.testGetAll" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainWindow" />
+        <item itemvalue="JUnit.MysqlTest.testGetAll" />
         <item itemvalue="JUnit.MysqlTest.saveOne" />
         <item itemvalue="JUnit.MysqlTest.testCreateTable" />
         <item itemvalue="Application.LoginView" />
-        <item itemvalue="JUnit.MysqlTest.testGetOne" />
       </list>
     </recent_temporary>
   </component>
@@ -565,44 +715,44 @@
       <workItem from="1553774618999" duration="5645000" />
       <workItem from="1555841844294" duration="2970000" />
       <workItem from="1555845566448" duration="15237000" />
-      <workItem from="1555902141095" duration="12363000" />
+      <workItem from="1555902141095" duration="34007000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MysqlTest_testGetOne - 2019.03.28 at 21h 32m 37s.xml">
-      <configuration name="MysqlTest.testGetOne" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MysqlTest_testGetOne - 2019.03.28 at 21h 33m 01s.xml">
-      <configuration name="MysqlTest.testGetOne" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MysqlTest_testGetOne - 2019.03.28 at 21h 33m 30s.xml">
-      <configuration name="MysqlTest.testGetOne" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MysqlTest_testGetOne - 2019.03.28 at 21h 34m 57s.xml">
-      <configuration name="MysqlTest.testGetOne" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MysqlTest_testGetOne - 2019.03.28 at 21h 36m 03s.xml">
-      <configuration name="MysqlTest.testGetOne" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MysqlTest_testGetOne - 2019.04.21 at 18h 17m 54s.xml">
-      <configuration name="MysqlTest.testGetOne" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MysqlTest_testCreateTable - 2019.04.22 at 12h 10m 11s.xml">
-      <configuration name="MysqlTest.testCreateTable" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MysqlTest_saveOne - 2019.04.22 at 12h 17m 24s.xml">
-      <configuration name="MysqlTest.saveOne" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MysqlTest_saveOne - 2019.04.22 at 12h 18m 06s.xml">
       <configuration name="MysqlTest.saveOne" configurationId="JUnit" />
     </history-entry>
     <history-entry file="MysqlTest_saveOne - 2019.04.22 at 12h 18m 29s.xml">
       <configuration name="MysqlTest.saveOne" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MysqlTest_testCreateTable - 2019.04.22 at 18h 44m 36s.xml">
+      <configuration name="MysqlTest.testCreateTable" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MysqlTest_testCreateTable - 2019.04.22 at 18h 45m 30s.xml">
+      <configuration name="MysqlTest.testCreateTable" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MysqlTest_saveOne - 2019.04.22 at 18h 50m 45s.xml">
+      <configuration name="MysqlTest.saveOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MysqlTest_saveOne - 2019.04.22 at 19h 01m 08s.xml">
+      <configuration name="MysqlTest.saveOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MysqlTest_testGetAll - 2019.04.22 at 19h 23m 55s.xml">
+      <configuration name="MysqlTest.testGetAll" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MysqlTest_testGetAll - 2019.04.22 at 19h 24m 47s.xml">
+      <configuration name="MysqlTest.testGetAll" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MysqlTest_testGetAll - 2019.04.22 at 19h 25m 55s.xml">
+      <configuration name="MysqlTest.testGetAll" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MysqlTest_testGetAll - 2019.04.22 at 19h 31m 14s.xml">
+      <configuration name="MysqlTest.testGetAll" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97364000" />
+    <option name="totallyTimeSpent" value="119008000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -660,133 +810,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/comm/BaseObserver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/base/BasePresenterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/base/BaseView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/c3p0/c3p0/0.9.1.2/c3p0-0.9.1.2.jar!/com/mchange/v2/c3p0/impl/WrapperConnectionPoolDataSourceBase.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2808">
-          <caret line="230" column="29" selection-start-line="230" selection-start-column="29" selection-end-line="230" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/c3p0/c3p0/0.9.1.2/c3p0-0.9.1.2.jar!/com/mchange/v2/c3p0/ComboPooledDataSource.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="239" column="28" lean-forward="true" selection-start-line="239" selection-start-column="28" selection-end-line="239" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Objects.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="202" selection-start-line="202" selection-end-line="202" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/login_tmp.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/mysql/C3p0helper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/datafx/flow/8.0.1/flow-8.0.1.jar!/io/datafx/controller/flow/Flow.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-324">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/datafx/flow/8.0.1/flow-8.0.1.jar!/io/datafx/controller/flow/action/ActionTrigger.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/event/EventType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/event/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="116" column="17" selection-start-line="116" selection-start-column="17" selection-end-line="116" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/scene/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="8260" column="40" selection-start-line="8260" selection-start-column="40" selection-end-line="8260" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="69" column="34" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/jfoenix/jfoenix/8.0.8/jfoenix-8.0.8.jar!/com/jfoenix/controls/JFXSnackbar.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="44" column="11" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/jfoenix/jfoenix/8.0.8/jfoenix-8.0.8.jar!/com/jfoenix/controls/JFXSnackbarLayout.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/css/jfoenix-componets.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="342" column="11" selection-start-line="342" selection-start-column="11" selection-end-line="342" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/LoginView.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/util/FileUtil.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -812,11 +835,168 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/T_HZXX.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/T_KSXX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+        <state relative-caret-position="18">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/local/KsxxLocalDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSLocalDatasource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/comm/Dao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="57" column="17" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
           <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/T_KSYS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/scene/layout/BackgroundImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="110" column="11" selection-start-line="110" selection-start-column="11" selection-end-line="110" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/Identity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/base/BasePresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/base/BasePresenterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/main/doctor/DoctorContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/base/BaseView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/main/doctor/DoctorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="55" column="8" lean-forward="true" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1615#1616#0" expanded="true" />
+            <element signature="e#1640#1641#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/main/doctor/DoctorPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/main/patient/PatientPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#391#392#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+            <element signature="e#601#602#0" expanded="true" />
+            <element signature="e#645#646#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/main/patient/PatientContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/main/patient/PatientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="61" column="36" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2227#2228#0" expanded="true" />
+            <element signature="e#2265#2266#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/login.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/thzxx/T_HZXX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="e#674#675#0" expanded="true" />
             <element signature="e#701#702#0" expanded="true" />
             <element signature="e#741#742#0" expanded="true" />
             <element signature="e#773#774#0" expanded="true" />
@@ -848,11 +1028,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/T_GHXX.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tghxx/T_GHXX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+        <state relative-caret-position="180">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
+            <element signature="e#772#773#0" expanded="true" />
             <element signature="e#799#800#0" expanded="true" />
             <element signature="e#839#840#0" expanded="true" />
             <element signature="e#871#872#0" expanded="true" />
@@ -888,67 +1069,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tghxx/source/TGHXXRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="38" column="24" lean-forward="true" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tghxx/source/TGHXXDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#491#492#0" expanded="true" />
+            <element signature="e#511#512#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tghxx/source/dao/GhxxDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="50" column="27" lean-forward="true" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1168#1169#0" expanded="true" />
+            <element signature="e#1216#1217#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/mysql/C3p0helper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/mysql/DatabaseManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/T_KSXX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/local/KsxxLocalDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/TKSXXRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/TKSXXDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSLocalDatasource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/local/KsxxDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1779">
-          <caret line="119" selection-start-line="119" selection-end-line="119" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1408#1409#0" expanded="true" />
-            <element signature="e#1460#1461#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/comm/Dao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="57" column="17" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
+        <state relative-caret-position="-3">
+          <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -957,56 +1122,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/TBRXXRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="41" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="41" />
+        <state relative-caret-position="270">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/State.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="303">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2208#2209#0" expanded="true" />
+            <element signature="e#2238#2239#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/T_KSYS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/TBRXXDataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="24" column="58" lean-forward="true" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+        <state relative-caret-position="263">
+          <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#587#588#0" expanded="true" />
-            <element signature="e#678#679#0" expanded="true" />
-            <element signature="e#963#964#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
+            <element signature="e#1310#1311#0" expanded="true" />
+            <element signature="e#1361#1362#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/local/BrxxLocalDataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="58" column="23" lean-forward="true" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+        <state relative-caret-position="677">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#622#623#0" expanded="true" />
@@ -1015,93 +1166,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/local/dao/UserDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/TKSXXRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="131" column="35" selection-start-line="131" selection-start-column="35" selection-end-line="131" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/local/KsysDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="76" column="34" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#403#404#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="62" column="36" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#469#470#0" expanded="true" />
-            <element signature="e#492#493#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/MysqlTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#987#988#0" expanded="true" />
-            <element signature="e#1046#1047#0" expanded="true" />
-            <element signature="e#1543#1544#0" expanded="true" />
-            <element signature="e#1595#1596#0" expanded="true" />
-            <element signature="e#1665#1666#0" expanded="true" />
-            <element signature="e#1721#1722#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1015#1016#0" expanded="true" />
-            <element signature="e#1067#1068#0" expanded="true" />
-            <element signature="e#1655#1656#0" expanded="true" />
-            <element signature="e#1715#1716#0" expanded="true" />
-            <element signature="e#1793#1794#0" expanded="true" />
-            <element signature="e#1852#1853#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/main/doctor/DoctorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="32" column="2" selection-start-line="32" selection-start-column="2" selection-end-line="34" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/scene/layout/BackgroundImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="110" column="11" selection-start-line="110" selection-start-column="11" selection-end-line="110" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        <state relative-caret-position="231">
+          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1109,8 +1177,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/main_doctor.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
@@ -1120,35 +1188,156 @@
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="101" selection-start-line="8" selection-start-column="101" selection-end-line="8" selection-end-column="101" />
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/main/patient/PatientController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/TKSXXDataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+        <state relative-caret-position="353">
+          <caret line="54" column="50" lean-forward="true" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/login.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="-288">
-          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tbrxx/source/local/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="121" column="41" lean-forward="true" selection-start-line="98" selection-start-column="7" selection-end-line="121" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/MysqlTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-114">
+          <caret line="68" column="99" selection-start-line="68" selection-start-column="99" selection-end-line="68" selection-end-column="99" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2107#2108#0" expanded="true" />
+            <element signature="e#2159#2160#0" expanded="true" />
+            <element signature="e#2229#2230#0" expanded="true" />
+            <element signature="e#2285#2286#0" expanded="true" />
+            <element signature="e#2868#2869#0" expanded="true" />
+            <element signature="e#2922#2923#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/main_gh.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/local/KsysDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="90" column="68" selection-start-line="90" selection-start-column="68" selection-end-line="90" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksys/source/TKSYSDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="172" column="56" lean-forward="true" selection-start-line="172" selection-start-column="56" selection-end-line="172" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/login/LoginPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="57" column="86" selection-start-line="57" selection-start-column="86" selection-end-line="57" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2400#2401#0" expanded="true" />
+            <element signature="e#2459#2460#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="51" column="51" selection-start-line="51" selection-start-column="51" selection-end-line="51" selection-end-column="51" />
+        <state relative-caret-position="285">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/page/main/guahao/GuaHaoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3118#3119#0" expanded="true" />
+            <element signature="e#3220#3221#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/thzxx/source/THZXXRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/thzxx/source/THZXXDatasource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/tksxx/source/local/KsxxDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="101" column="74" selection-start-line="101" selection-start-column="74" selection-end-line="101" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/cychust/data/thzxx/source/dao/HzxxDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
         </state>
       </provider>
     </entry>

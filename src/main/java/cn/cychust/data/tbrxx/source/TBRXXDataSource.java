@@ -1,13 +1,11 @@
 package cn.cychust.data.tbrxx.source;
 
-import cn.cychust.comm.Executor;
 import cn.cychust.data.tbrxx.T_BRXX;
 import cn.cychust.data.tbrxx.source.local.BrxxLocalDataSource;
 import javafx.application.Platform;
 
+import java.sql.Timestamp;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.ThreadPoolExecutor;
 
 
 /**
@@ -54,12 +52,16 @@ public class TBRXXDataSource implements TBRXXRepository {
     @Override
     public void updateOne(T_BRXX newOne) {
 
+        brxxLocalDataSource.updateOne(newOne);
+
     }
+
 
     @Override
     public void saveAll(List<T_BRXX> brxxList) {
 
     }
+
 
     @Override
     public void deleteOne(String id) {

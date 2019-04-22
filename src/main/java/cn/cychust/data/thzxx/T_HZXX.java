@@ -1,4 +1,4 @@
-package cn.cychust.data.tbrxx;
+package cn.cychust.data.thzxx;
 
 /**
  * @program: HUST_JAVA_COURSE_DESIGN

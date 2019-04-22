@@ -23,7 +23,7 @@ public class DatabaseManager {
         ds = new ComboPooledDataSource();
         ds.setUser("root");
         ds.setPassword("cyc921507");
-        ds.setJdbcUrl("jdbc:mysql://127.0.0.1:3306/test1");
+        ds.setJdbcUrl("jdbc:mysql://127.0.0.1:3306/jcoursetest");
         ds.setDriverClass("com.mysql.jdbc.Driver");
         ds.setInitialPoolSize(5);
         ds.setMinPoolSize(1);

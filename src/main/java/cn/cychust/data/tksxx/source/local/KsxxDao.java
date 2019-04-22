@@ -99,12 +99,12 @@ public class KsxxDao extends Dao {
         Connection connection = null;
         try {
             connection = DatabaseManager.getINSTANCE().getConnection();
-            resultSet = connection.createStatement().executeQuery("select  * from  t_ksxx");
+            resultSet = connection.createStatement().executeQuery(FIND_ALL);
             while (resultSet.next()) {
                 T_KSXX tKsxx = new T_KSXX();
-                tKsxx.setKSBH(resultSet.getString(0));
-                tKsxx.setKSMC(resultSet.getString(1));
-                tKsxx.setPYZC(resultSet.getString(2));
+                tKsxx.setKSBH(resultSet.getString(1));
+                tKsxx.setKSMC(resultSet.getString(2));
+                tKsxx.setPYZC(resultSet.getString(3));
                 list.add(tKsxx);
             }
         } catch (SQLException e) {

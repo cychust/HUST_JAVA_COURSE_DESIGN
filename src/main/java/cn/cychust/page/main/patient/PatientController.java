@@ -1,6 +1,8 @@
 package cn.cychust.page.main.patient;
 
+import cn.cychust.base.BasePresenterImpl;
 import cn.cychust.page.login.LoginController;
+import cn.cychust.page.main.guahao.GuaHaoController;
 import com.jfoenix.controls.JFXButton;
 import io.datafx.controller.ViewController;
 import io.datafx.controller.flow.FlowException;
@@ -20,9 +22,18 @@ import javax.annotation.PostConstruct;
  * @create: 2019-04-22 12:30
  **/
 @ViewController(value = "/fxml/main_patient.fxml")
-public class PatientController {
+public class PatientController implements PatientContract.View {
+
+
+    private PatientContract.Presenter mPresenter;
     @FXML
     private JFXButton btn_logout;
+
+    @FXML
+    private JFXButton btn_gh;
+
+    @FXML
+    private JFXButton btn_info;
 
 
     @ActionHandler
@@ -30,19 +41,40 @@ public class PatientController {
 
     @PostConstruct
     public void init() throws Exception {
+        setPresenter(new PatientPresenter(this));
+
         btn_logout.setGraphic(new ImageView(new Image("/images/logout.png")));
         btn_logout.setMaxHeight(40);
         btn_logout.setMaxWidth(40);
         btn_logout.setOnMouseClicked(e -> {
             try {
-                navigateToLogin();
+                mPresenter.logout();
+                navigateToLoginView();
             } catch (VetoException | FlowException exception) {
                 exception.printStackTrace();
             }
         });
+
+        btn_gh.setOnMouseClicked(event -> {
+            try {
+                navigateToGuahaoView();
+            } catch (VetoException | FlowException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
-    private void navigateToLogin() throws VetoException, FlowException {
+    private void navigateToLoginView() throws VetoException, FlowException {
         actionHandler.navigate(LoginController.class);
+    }
+
+    private void navigateToGuahaoView() throws VetoException, FlowException {
+        actionHandler.navigate(GuaHaoController.class);
+    }
+
+
+    @Override
+    public void setPresenter(PatientContract.Presenter presenter) {
+        mPresenter = presenter;
     }
 }

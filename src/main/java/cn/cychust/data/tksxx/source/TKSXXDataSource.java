@@ -1,6 +1,13 @@
 package cn.cychust.data.tksxx.source;
 
 import cn.cychust.comm.Executor;
+import cn.cychust.data.tksxx.T_KSXX;
+import cn.cychust.data.tksxx.source.local.KsxxDao;
+import javafx.application.Platform;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.concurrent.ExecutorService;
 
 /**
  * @program: HUST_JAVA_COURSE_DESIGN
@@ -12,10 +19,10 @@ public class TKSXXDataSource implements TKSXXRepository {
 
     private static TKSXXDataSource INSTANCE;
 
-    private Executor executor;
+    private ExecutorService executor;
 
     private TKSXXDataSource() {
-        executor = Executor.getINSTANCE();
+        executor = Executor.getINSTANCE().getExecutor();
 
     }
 
@@ -37,7 +44,18 @@ public class TKSXXDataSource implements TKSXXRepository {
 
     @Override
     public void getAll(LoadTksxxsCallback callback) {
-
+        Runnable runnable = () -> {
+            Optional list = KsxxDao.findAll();
+            if (list.isPresent()) {
+                Platform.runLater(() -> {
+                    callback.onTasksLoaded((List<T_KSXX>) list.get());
+                });
+            } else
+                Platform.runLater(() -> {
+                    callback.onDataNotAvailable();
+                });
+        };
+        executor.execute(runnable);
     }
 
     @Override

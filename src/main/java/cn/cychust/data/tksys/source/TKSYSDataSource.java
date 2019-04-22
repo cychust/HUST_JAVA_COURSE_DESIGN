@@ -2,6 +2,7 @@ package cn.cychust.data.tksys.source;
 
 import cn.cychust.comm.Executor;
 import cn.cychust.data.tksxx.source.TKSXXRepository;
+import cn.cychust.data.tksxx.source.local.KsxxDao;
 import cn.cychust.data.tksys.T_KSYS;
 import cn.cychust.data.tksys.source.local.KsysDao;
 import javafx.application.Platform;
@@ -37,7 +38,7 @@ public class TKSYSDataSource implements TKSYSRepository {
     }
 
     @Override
-    public void getOne(String userId, String password, GetTbrxxCallback callback) {
+    public void getOne(String userId, String password, GetTksysCallback callback) {
         Runnable runnable = () -> {
             Optional t_ksys = KsysDao.findOne(userId, password);
             if (t_ksys.isPresent()) {
@@ -52,8 +53,41 @@ public class TKSYSDataSource implements TKSYSRepository {
         executor.execute(runnable);
     }
 
+
     @Override
-    public void getAll(LoadTbrxxsCallback callback) {
+    public void getOneByYSBH(String userId, GetTksysCallback callback) {
+        Runnable runnable = () -> {
+            Optional t_ksys = KsysDao.findOne(userId);
+            if (t_ksys.isPresent()) {
+                Platform.runLater(() ->
+                        callback.onTasksLoaded((T_KSYS) t_ksys.get())
+                );
+            } else
+                Platform.runLater(() ->
+                        callback.onDataNotAvailable()
+                );
+        };
+        executor.execute(runnable);
+    }
+
+    @Override
+    public void getKsysesByKSBH(String id, LoadTksysesCallback callback) {
+        Runnable runnable = () -> {
+            Optional optional = KsysDao.findAllByKSBH(id);
+            if (optional.isPresent())
+                Platform.runLater(() -> {
+                    callback.onTasksLoaded((List<T_KSYS>) optional.get());
+                });
+            else
+                Platform.runLater(() -> {
+                    callback.onDataNotAvailable();
+                });
+        };
+        executor.execute(runnable);
+    }
+
+    @Override
+    public void getAll(LoadTksysesCallback callback) {
 
     }
 

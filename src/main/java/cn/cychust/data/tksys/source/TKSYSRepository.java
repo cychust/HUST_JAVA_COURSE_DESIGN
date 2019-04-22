@@ -11,9 +11,11 @@ import java.util.List;
  * @create: 2019-04-22 11:28
  **/
 public interface TKSYSRepository {
-    void getOne(String userId, String password, GetTbrxxCallback callback);
+    void getOne(String userId, String password, GetTksysCallback callback);
 
-    void getAll(LoadTbrxxsCallback callback);
+    void getOneByYSBH(String userId, GetTksysCallback callback);
+
+    void getAll(LoadTksysesCallback callback);
 
     void saveOne(T_KSYS newOne);
 
@@ -25,13 +27,15 @@ public interface TKSYSRepository {
 
     void createTable();
 
-    interface LoadTbrxxsCallback {
-        void onTasksLoaded();
+    void getKsysesByKSBH(String id, LoadTksysesCallback callback);
+
+    interface LoadTksysesCallback {
+        void onTasksLoaded(List<T_KSYS> list);
 
         void onDataNotAvailable();
     }
 
-    interface GetTbrxxCallback {
+    interface GetTksysCallback {
         void onTasksLoaded(T_KSYS t_brxx);
 
         void onDataNotAvailable();

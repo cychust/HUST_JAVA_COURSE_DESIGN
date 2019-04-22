@@ -1,5 +1,7 @@
 package cn.cychust.page.login;
 
+import cn.cychust.Identity;
+import cn.cychust.State;
 import cn.cychust.base.BasePresenterImpl;
 import cn.cychust.data.tbrxx.T_BRXX;
 import cn.cychust.data.tbrxx.source.TBRXXDataSource;
@@ -7,6 +9,9 @@ import cn.cychust.data.tbrxx.source.TBRXXRepository;
 import cn.cychust.data.tksys.T_KSYS;
 import cn.cychust.data.tksys.source.TKSYSDataSource;
 import cn.cychust.data.tksys.source.TKSYSRepository;
+import org.apache.log4j.Logger;
+
+import java.sql.Timestamp;
 
 /**
  * @program: hospital-manager-system
@@ -15,6 +20,11 @@ import cn.cychust.data.tksys.source.TKSYSRepository;
  * @create: 2019-03-15 16:21
  **/
 public class LoginPresenter extends BasePresenterImpl implements LoginContract.Presenter {
+    private static final String TAG = "LoginPresenter.class";
+
+    private static final Logger LOGGER = Logger.getLogger(TAG);
+
+
     private LoginContract.View mView;
     private TBRXXDataSource mTBRXXDataSource;
 
@@ -24,7 +34,7 @@ public class LoginPresenter extends BasePresenterImpl implements LoginContract.P
         mView = view;
         mTBRXXDataSource = tbrxxDataSource;
         mTksysDataSource = tKSYSDataSource;
-        mView.setPresenter(this);
+//        mView.setPresenter(this);
     }
 
     public void login(String user, String pass, boolean isBR) {
@@ -33,6 +43,9 @@ public class LoginPresenter extends BasePresenterImpl implements LoginContract.P
             mTBRXXDataSource.getOne(user, pass, new TBRXXRepository.GetTbrxxCallback() {
                 @Override
                 public void onTasksLoaded(T_BRXX t_brxx) {
+                    State.getINSTANCE().login(Identity.PATIENT, null, t_brxx); //登录状态
+                    State.getT_brxx().setDLRQ(new Timestamp(System.currentTimeMillis()));
+                    mTBRXXDataSource.updateOne(State.getT_brxx());              //更新最后登录时间
                     mView.loginSuccess();
                 }
 
@@ -42,9 +55,10 @@ public class LoginPresenter extends BasePresenterImpl implements LoginContract.P
                 }
             });
         else
-            mTksysDataSource.getOne(user, pass, new TKSYSRepository.GetTbrxxCallback() {
+            mTksysDataSource.getOne(user, pass, new TKSYSRepository.GetTksysCallback() {
                 @Override
-                public void onTasksLoaded(T_KSYS t_brxx) {
+                public void onTasksLoaded(T_KSYS t_ksys) {
+                    State.getINSTANCE().login(Identity.DOCTOR, t_ksys, null); //登录状态
                     mView.loginSuccess();
                 }
 

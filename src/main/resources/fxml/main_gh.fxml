@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="488.0" prefWidth="722.0" style="-fx-background-image: url(/images/2.jpg);-fx-background-size: 750 500; -fx-background-color: #ffffff" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label layoutX="0" layoutY="0" prefHeight="488.0" prefWidth="722.0" style="-fx-translate-z: -10; -fx-background-color: #ffffff; -fx-opacity: 0.8;" />
+        <JFXComboBox fx:id="cb_ksmc" editable="true" layoutX="200.0" layoutY="100.0" prefWidth="150.0" style="-fx-translate-z: 10;" />
+        <JFXComboBox fx:id="cb_hzlb" editable="true" layoutX="200.0" layoutY="180.0" prefWidth="150.0" style="-fx-translate-z: 10;" />
+        <JFXComboBox fx:id="cb_ysxm" editable="true" layoutX="460.0" layoutY="100.0" prefWidth="150.0" style="-fx-translate-z: 10;" />
+        <JFXComboBox fx:id="cb_hzmc" editable="true" layoutX="460.0" layoutY="180.0" prefWidth="150.0" style="-fx-translate-z: 10;" />
+        <Label layoutX="118.0" layoutY="100.0" style="-fx-translate-z: 10;" text="科室名称" textFill="BLACK">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="118.0" layoutY="180.0" style="-fx-translate-z: 10;" text="号种类别" textFill="BLACK">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="118.0" layoutY="260.0" style="-fx-translate-z: 10;" text="缴款金额" textFill="BLACK">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="118.0" layoutY="340.0" style="-fx-translate-z: 10;" text="找零金额" textFill="BLACK">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="378.0" layoutY="100.0" style="-fx-translate-z: 10;" text="医生姓名" textFill="BLACK">
+            <font>
+                <Font name="System Bold Italic" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="378.0" layoutY="182.0" style="-fx-translate-z: 10;" text="号种名称" textFill="BLACK">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="378.0" layoutY="271.0" style="-fx-translate-z: 10;" text="应缴金额" textFill="black">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="378.0" layoutY="335.0" style="-fx-translate-z: 10;" text="挂号号码" textFill="BLACK">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <JFXTextField layoutX="200.0" layoutY="260.0" style="-fx-translate-z: 10;" />
+        <JFXTextField layoutX="200.0" layoutY="340.0" style="-fx-translate-z: 10;" />
+        <JFXTextField layoutX="460.0" layoutY="260.0" style="-fx-translate-z: 10;" />
+        <JFXTextField layoutX="460.0" layoutY="340.0" style="-fx-translate-z: 10;" />
+    </children>
+</AnchorPane>

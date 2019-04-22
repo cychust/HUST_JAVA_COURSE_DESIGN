@@ -5,6 +5,7 @@ import cn.cychust.data.tbrxx.T_BRXX;
 import cn.cychust.data.tbrxx.source.TBRXXRepository;
 import cn.cychust.data.tbrxx.source.local.dao.UserDao;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ExecutorService;
@@ -63,7 +64,10 @@ public class BrxxLocalDataSource implements TBRXXRepository {
 
     @Override
     public void updateOne(T_BRXX newOne) {
-
+        Runnable runnable = () -> {
+            UserDao.updateById(newOne);
+        };
+        executor.execute(runnable);
     }
 
     @Override
@@ -83,7 +87,6 @@ public class BrxxLocalDataSource implements TBRXXRepository {
         };
         executor.execute(runnable);
     }
-
 
     //    @Override
 //    public void login(final String userId, final String password, Callback callback) {

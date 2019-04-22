@@ -3,6 +3,7 @@ package cn.cychust.page;
 import cn.cychust.comm.Executor;
 import cn.cychust.mysql.DatabaseManager;
 import cn.cychust.page.login.LoginController;
+import cn.cychust.page.main.guahao.GuaHaoController;
 import com.jfoenix.controls.JFXDecorator;
 import com.jfoenix.svg.SVGGlyphLoader;
 import io.datafx.controller.flow.Flow;
@@ -43,7 +44,10 @@ public class MainWindow extends Application {
                 ioExc.printStackTrace();
             }
         }).start();
-        Flow flow = new Flow(LoginController.class);
+//        Flow flow = new Flow(LoginController.class);
+        Flow flow = new Flow(GuaHaoController.class);
+
+
         DefaultFlowContainer container = new DefaultFlowContainer();
         flowContext = new ViewFlowContext();
         flowContext.register("Stage", primaryStage);

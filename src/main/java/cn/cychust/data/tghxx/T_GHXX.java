@@ -1,4 +1,4 @@
-package cn.cychust.data.tbrxx;
+package cn.cychust.data.tghxx;
 
 import java.sql.Timestamp;
 

@@ -2,6 +2,8 @@ package cn.cychust.data.tksxx.source;
 
 import cn.cychust.data.tksxx.T_KSXX;
 
+import java.util.List;
+
 /**
  * @program: HUST_JAVA_COURSE_DESIGN
  * @description:
@@ -16,7 +18,7 @@ public interface TKSXXRepository {
     void createTable();
 
     interface LoadTksxxsCallback {
-        void onTasksLoaded();
+        void onTasksLoaded(List<T_KSXX> list);
 
         void onDataNotAvailable();
     }
