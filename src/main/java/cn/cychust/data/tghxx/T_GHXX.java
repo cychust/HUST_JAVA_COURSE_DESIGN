@@ -18,6 +18,10 @@ public class T_GHXX {
     private float GHFY;
     private Timestamp RQSJ;
 
+    public T_GHXX() {
+
+    }
+
     public T_GHXX(String GHBH, String HZBH, String YSBH, String BRBH, int GHRC, boolean THBZ, float GHFY, Timestamp RQSJ) {
         this.GHBH = GHBH;
         this.HZBH = HZBH;

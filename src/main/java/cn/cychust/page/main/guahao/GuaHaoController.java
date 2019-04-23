@@ -8,6 +8,7 @@ import cn.cychust.data.tksys.source.TKSYSDataSource;
 import cn.cychust.data.tksys.source.TKSYSRepository;
 import com.jfoenix.controls.JFXComboBox;
 import io.datafx.controller.ViewController;
+import io.reactivex.rxjavafx.transformers.FxFlowableTransformers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -43,6 +44,8 @@ public class GuaHaoController {
     private ObservableList<String> ysxmList = FXCollections.observableArrayList();
 
     private ObservableList<String> hzlbList = FXCollections.observableArrayList();
+
+    private ObservableList<String> hzmcList = FXCollections.observableArrayList();
 
     @PostConstruct
     public void init() throws Exception {
@@ -80,6 +83,7 @@ public class GuaHaoController {
                                 ysxmList.add(tKsys.getYSBH() + " " + tKsys.getYSMC());
                             }
                         }
+
                         @Override
                         public void onDataNotAvailable() {
                             ysxmList = FXCollections.observableArrayList();
@@ -115,5 +119,6 @@ public class GuaHaoController {
                 }
             }
         });
+
     }
 }

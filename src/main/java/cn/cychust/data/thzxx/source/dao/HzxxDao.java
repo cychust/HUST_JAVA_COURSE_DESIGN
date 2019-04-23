@@ -20,7 +20,7 @@ import java.util.Optional;
  **/
 public class HzxxDao {
 
-    private final static String FIND_ONE_BY_ID = "SELECT * FROM T_KSXX WHERE KSBH=?";
+    private final static String FIND_ONE_BY_ID = "SELECT * FROM T_HZXX WHERE KSBH=?";
 
 
     public static Optional findOneByHZBH(String id) {
@@ -35,10 +35,14 @@ public class HzxxDao {
             statement.setString(1, id);
             resultSet = statement.executeQuery();
             if (resultSet != null && resultSet.next()) {
-                tKsxx = new T_KSXX();
-                tKsxx.setKSBH(resultSet.getString(1));
-                tKsxx.setKSMC(resultSet.getString(2));
-                tKsxx.setPYZC(resultSet.getString(3));
+                t_hzxx = new T_HZXX();
+                t_hzxx.setHZBH(resultSet.getString(1));
+                t_hzxx.setHZMC(resultSet.getString(2));
+                t_hzxx.setPYZS(resultSet.getString(3));
+                t_hzxx.setKSBH(resultSet.getString(4));
+                t_hzxx.setSFZJ(resultSet.getBoolean(5));
+                t_hzxx.setGHRS(resultSet.getInt(6));
+                t_hzxx.setGHFY(resultSet.getFloat(7));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -49,6 +53,6 @@ public class HzxxDao {
             C3p0helper.attemptClose(statement);
             C3p0helper.attemptClose(connection);
         }
-        return Optional.ofNullable(tKsxx);
+        return Optional.ofNullable(t_hzxx);
     }
 }

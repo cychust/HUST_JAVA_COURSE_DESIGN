@@ -1,15 +1,20 @@
 package cn.cychust.data.tghxx.source.dao;
 
 import cn.cychust.comm.Dao;
+import cn.cychust.data.tbrxx.T_BRXX;
 import cn.cychust.data.tghxx.T_GHXX;
 import cn.cychust.data.tksys.T_KSYS;
 import cn.cychust.mysql.C3p0helper;
 import cn.cychust.mysql.DatabaseManager;
+import javafx.beans.property.StringProperty;
 
 import java.beans.PropertyVetoException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -35,6 +40,7 @@ public class GhxxDao extends Dao {
     private final static String FIND_ALL = "";
     private final static String FIND_ONE_BY_GHBH = "SELECT * FROM T_GHXX WHERE GHBH = ?";
 
+    private final static String FIND_ALL_BY_YSBH = "SELECT * FROM T_GHXX WHERE YSBH = ?";
     private final static String ADD_ONE_STATEMENT = "INSERT INTO T_GHXX (GHBH,HZBH,YSBH,BRBH,GHRC,THBZ,GHFY,RQSJ) VALUES(?,?,?,?,?,?,?,?)";
 
 
@@ -72,5 +78,42 @@ public class GhxxDao extends Dao {
         }
         return Optional.of(result);
     }
+
+    public static Optional findAllByYSBH(String ysbh) {
+
+        List<T_GHXX> result = null;
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = DatabaseManager.getINSTANCE().getConnection();
+            statement = connection.prepareStatement(FIND_ALL_BY_YSBH);
+            statement.setString(1, ysbh);
+            resultSet = statement.executeQuery();
+            result = new ArrayList<>();
+            while (resultSet.next()) {
+                T_GHXX ghxx = new T_GHXX();
+                ghxx.setGHBH(resultSet.getString("GHBH"));
+                ghxx.setHZBH(resultSet.getString("HZBH"));
+                ghxx.setBRBH(resultSet.getString("BRBH"));
+                ghxx.setGHFY(resultSet.getFloat("GHFY"));
+                ghxx.setGHRC(resultSet.getInt("GHRC"));
+                ghxx.setRQSJ(resultSet.getTimestamp("RQSJ"));
+                ghxx.setTHBZ(resultSet.getBoolean("THBZ"));
+                ghxx.setYSBH(resultSet.getString("YSBH"));
+                result.add(ghxx);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (PropertyVetoException e) {
+            e.printStackTrace();
+        } finally {
+            C3p0helper.attemptClose(resultSet);
+            C3p0helper.attemptClose(statement);
+            C3p0helper.attemptClose(connection);
+        }
+        return Optional.of(result);
+    }
+
 
 }

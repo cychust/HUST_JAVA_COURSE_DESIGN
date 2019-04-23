@@ -4,7 +4,7 @@ import cn.cychust.data.tbrxx.T_BRXX;
 import cn.cychust.data.tbrxx.source.local.BrxxLocalDataSource;
 import javafx.application.Platform;
 
-import java.sql.Timestamp;
+
 import java.util.List;
 
 
@@ -23,6 +23,23 @@ public class TBRXXDataSource implements TBRXXRepository {
         this.brxxLocalDataSource = BrxxLocalDataSource.getINSTANCE();
     }
 
+
+    @Override
+    public void getOne(String brbh, GetTbrxxCallback callback) {
+        brxxLocalDataSource.getOne(brbh, new GetTbrxxCallback() {
+            @Override
+            public void onTasksLoaded(T_BRXX t_brxx) {
+                Platform.runLater(() -> {
+                    callback.onTasksLoaded(t_brxx);
+                });
+            }
+
+            @Override
+            public void onDataNotAvailable() {
+                callback.onDataNotAvailable();
+            }
+        });
+    }
 
     @Override
     public void getOne(String userId, String password, GetTbrxxCallback callback) {

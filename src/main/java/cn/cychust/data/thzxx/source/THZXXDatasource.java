@@ -7,4 +7,5 @@ package cn.cychust.data.thzxx.source;
  * @create: 2019-04-22 21:30
  **/
 public class THZXXDatasource {
+
 }

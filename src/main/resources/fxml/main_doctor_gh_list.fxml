@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="485.0" prefWidth="722.0" style="-fx-background-image: url(/images/2.jpg);-fx-background-size: 750 500; -fx-background-color: #ffffff" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label layoutX="0" layoutY="0" prefHeight="488.0" prefWidth="722.0" style="-fx-translate-z: -10; -fx-background-color: #ffffff; -fx-opacity: 0.2;" />
+
+        <JFXButton fx:id="btn_logout" alignment="CENTER_RIGHT" layoutX="550.0" mnemonicParsing="false" textAlignment="CENTER" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+        <JFXTreeTableView fx:id="tv_list" layoutY="68.0" maxHeight="349.0" maxWidth="722.0" prefHeight="315.0" prefWidth="722.0" style="-fx-opacity: 0.7;-fx-text-fill: #000000" />
+        <Label fx:id="lb_title" layoutX="221.0" layoutY="5.0" prefHeight="78.0" prefWidth="281.0" text="Label">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+      <JFXButton layoutX="0.0" layoutY="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" mnemonicParsing="false" text="Button" />
+
+    </children>
+</AnchorPane>

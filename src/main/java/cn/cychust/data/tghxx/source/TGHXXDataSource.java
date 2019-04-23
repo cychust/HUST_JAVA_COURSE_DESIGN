@@ -4,8 +4,10 @@ import cn.cychust.comm.Executor;
 import cn.cychust.data.tghxx.T_GHXX;
 import cn.cychust.data.tghxx.source.dao.GhxxDao;
 import cn.cychust.data.tksys.source.TKSYSDataSource;
+import javafx.application.Platform;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.ExecutorService;
 
 /**
@@ -31,6 +33,23 @@ public class TGHXXDataSource implements TGHXXRepository {
         return INSTANCE;
     }
 
+
+
+    @Override
+    public void findAllByYSBH(String ysbh, LoadTghxxsCallback callback) {
+        Runnable runnable = () -> {
+            Optional optional = GhxxDao.findAllByYSBH(ysbh);
+            if (optional.isPresent())
+                Platform.runLater(() -> {
+                    callback.onTasksLoaded((List<T_GHXX>) optional.get());
+                });
+            else
+                Platform.runLater(() -> {
+                    callback.onDataNotAvailable();
+                });
+        };
+        executor.execute(runnable);
+    }
 
     @Override
     public void getOne(String userId, String password, GetTghxxCallback callback) {

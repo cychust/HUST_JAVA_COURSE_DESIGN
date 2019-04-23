@@ -3,7 +3,6 @@ package cn.cychust.page;
 import cn.cychust.comm.Executor;
 import cn.cychust.mysql.DatabaseManager;
 import cn.cychust.page.login.LoginController;
-import cn.cychust.page.main.guahao.GuaHaoController;
 import com.jfoenix.controls.JFXDecorator;
 import com.jfoenix.svg.SVGGlyphLoader;
 import io.datafx.controller.flow.Flow;
@@ -44,8 +43,8 @@ public class MainWindow extends Application {
                 ioExc.printStackTrace();
             }
         }).start();
-//        Flow flow = new Flow(LoginController.class);
-        Flow flow = new Flow(GuaHaoController.class);
+        Flow flow = new Flow(LoginController.class);
+//        Flow flow = new Flow(DoctorGuahaoListController.class);
 
 
         DefaultFlowContainer container = new DefaultFlowContainer();
@@ -57,6 +56,7 @@ public class MainWindow extends Application {
         primaryStage.setMinWidth(500);
         primaryStage.setMinHeight(400);
 //        primaryStage.setTitle("Demo");
+        scene.getStylesheets().add(MainWindow.class.getResource("/css/jfoenix-components.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.show();
         flow.createHandler(flowContext).start(container);

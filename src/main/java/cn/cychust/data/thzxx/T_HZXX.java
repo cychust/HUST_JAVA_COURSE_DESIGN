@@ -15,6 +15,9 @@ public class T_HZXX {
     private int GHRS;
     private float GHFY;
 
+    public T_HZXX() {
+    }
+
     public T_HZXX(String HZBH, String HZMC, String PYZS, String KSBH, boolean SFZJ, int GHRS, float GHFY) {
         this.HZBH = HZBH;
         this.HZMC = HZMC;

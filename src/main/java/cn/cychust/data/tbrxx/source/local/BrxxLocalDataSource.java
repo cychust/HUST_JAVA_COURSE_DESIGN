@@ -38,6 +38,18 @@ public class BrxxLocalDataSource implements TBRXXRepository {
     }
 
     @Override
+    public void getOne(String brbh, GetTbrxxCallback callback) {
+        Runnable runnable = () -> {
+            final Optional user = UserDao.findOne(brbh, "*");
+            if (user.isPresent())
+                callback.onTasksLoaded(((T_BRXX) user.get()));
+            else
+                callback.onDataNotAvailable();
+        };
+        executor.execute(runnable);
+    }
+
+    @Override
     public void getOne(String userId, String password, GetTbrxxCallback callback) {
         Runnable runnable = () -> {
             final Optional user = UserDao.findOne(userId, password);
@@ -93,8 +105,8 @@ public class BrxxLocalDataSource implements TBRXXRepository {
 //        //
 ////        Observable<Boolean> observable = Observable.create(new ObservableOnSubscribe<Boolean>() {
 ////            public void subscribe(ObservableEmitter<Boolean> observableEmitter) throws Exception {
-////                if (repository.isEmpty()) observableEmitter.onNext(false);
-////                if (repository.containsKey(userId) && repository.get(userId).equals(password))
+////                if (Repository.isEmpty()) observableEmitter.onNext(false);
+////                if (Repository.containsKey(userId) && Repository.get(userId).equals(password))
 ////                    observableEmitter.onNext(true);
 ////                else observableEmitter.onNext(false);
 ////                observableEmitter.onComplete();

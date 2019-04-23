@@ -27,6 +27,7 @@ public interface TBRXXRepository {
 
     void deleteOne(String id);
 
+    void getOne(String brbh,GetTbrxxCallback callback);
 
     void createTable();
 

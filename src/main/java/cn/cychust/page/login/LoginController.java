@@ -16,6 +16,7 @@ import io.datafx.controller.flow.context.FlowActionHandler;
 import io.datafx.controller.util.VetoException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 import org.apache.log4j.Logger;
@@ -83,17 +84,26 @@ public final class LoginController implements LoginContract.View {
             mPresenter.login(tf_username.getText(), tf_password.getText(), isBR);
         });
 
+        tf_password.setText("123");
+        tf_username.setText("000001");
+        tf_username.setTooltip(new Tooltip("用户名"));
+        tf_password.setTooltip(new Tooltip("密码"));
+        btn_start.setTooltip(new Tooltip("登录"));
+
         rb_duzhe.setSelected(true);
+        rb_duzhe.setTooltip(new Tooltip("病人身份"));
         isBR = true;
         //选择读者身份
         rb_duzhe.setOnMouseClicked(a -> {
             isBR = true;
         });
+
         //选择工作人员
         rb_gzry.setOnMouseClicked(a -> {
             isBR = false;
         });
 
+        rb_gzry.setTooltip(new Tooltip("医生身份"));
 
         initializeFields();
     }

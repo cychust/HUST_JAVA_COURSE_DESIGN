@@ -25,7 +25,10 @@
         <JFXTextField fx:id="tf_username" focusColor="DEEPSKYBLUE" layoutX="550.0" layoutY="200.0" prefColumnCount="16" promptText="请输入用户名..." style="-fx-background-color: #fffffff;" unFocusColor="#00ff1e">
          <padding>
             <Insets left="3.0" right="3.0" />
-         </padding></JFXTextField>
+         </padding>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></JFXTextField>
         <Label layoutX="500.0" layoutY="200.0" text="用户名" textFill="RED">
             <font>
                 <Font name="System Bold" size="15.0" />
@@ -40,6 +43,9 @@
             <padding>
                 <Insets left="3.0" right="3.0" />
             </padding>
+         <font>
+            <Font size="14.0" />
+         </font>
         </JFXPasswordField>
         <JFXProgressBar fx:id="prgs_login" layoutY="460.0" prefHeight="10.0" prefWidth="722.0" progress="0.0" />
         <Label layoutX="77.0" layoutY="50.0" prefHeight="55.0" prefWidth="219.0" text="医院管理系统" textFill="DEEPSKYBLUE">

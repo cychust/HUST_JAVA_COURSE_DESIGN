@@ -1,8 +1,6 @@
 package cn.cychust.data.tghxx.source;
 
 import cn.cychust.data.tghxx.T_GHXX;
-import cn.cychust.data.tksys.T_KSYS;
-import cn.cychust.data.tksys.source.TKSYSRepository;
 
 import java.util.List;
 
@@ -27,8 +25,10 @@ public interface TGHXXRepository {
 
     void createTable();
 
+    void findAllByYSBH(String ysbh, LoadTghxxsCallback callback);
+
     interface LoadTghxxsCallback {
-        void onTasksLoaded();
+        void onTasksLoaded(List<T_GHXX> ghxxes);
 
         void onDataNotAvailable();
     }
