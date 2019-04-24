@@ -84,7 +84,7 @@ public final class LoginController implements LoginContract.View {
             mPresenter.login(tf_username.getText(), tf_password.getText(), isBR);
         });
 
-        tf_password.setText("123");
+        tf_password.setText("123456");
         tf_username.setText("000001");
         tf_username.setTooltip(new Tooltip("用户名"));
         tf_password.setTooltip(new Tooltip("密码"));

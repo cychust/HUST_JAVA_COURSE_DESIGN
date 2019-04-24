@@ -1,5 +1,6 @@
 package cn.cychust.data.thzxx.source;
 
+import cn.cychust.data.tghxx_item.Repository;
 import cn.cychust.data.thzxx.T_HZXX;
 import cn.cychust.data.tksxx.source.TKSXXRepository;
 
@@ -15,9 +16,11 @@ public interface THZXXRepository {
 
     void getOne(String id, GetThzxxCallback callback);
 
-    void getAll(LoadThzxxsCallback callback);
+//    void getAll(LoadThzxxsCallback callback);
 
-    void createTable();
+    void getHzmcByKsbhAndSfzj(String ksbh, boolean sfzj, LoadThzxxsCallback callback);
+
+//    void createTable();
 
     interface LoadThzxxsCallback {
         void onTasksLoaded(List<T_HZXX> list);
