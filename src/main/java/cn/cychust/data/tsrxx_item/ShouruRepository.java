@@ -3,6 +3,7 @@ package cn.cychust.data.tsrxx_item;
 import cn.cychust.data.tghxx_item.GHXX_Item;
 import cn.cychust.data.tghxx_item.Repository;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ import java.util.List;
  * @create: 2019-04-23 21:14
  **/
 public interface ShouruRepository {
-    void getAllByYS(String id,LoadTsrxxItemCallback callback);
+    void getAllBetween(Timestamp start, Timestamp end, LoadTsrxxItemCallback callback);
 
     interface LoadTsrxxItemCallback {
         void onTasksLoaded(List<SRXX_Item> list);

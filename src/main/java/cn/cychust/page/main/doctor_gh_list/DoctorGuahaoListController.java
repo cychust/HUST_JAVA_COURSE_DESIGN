@@ -7,6 +7,7 @@ import cn.cychust.data.tghxx_item.GHXX_TreeItem;
 import cn.cychust.data.tbrxx.source.TBRXXDataSource;
 import cn.cychust.data.tghxx_item.Repository;
 import cn.cychust.page.login.LoginController;
+import cn.cychust.page.main.doctor.DoctorController;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTreeTableColumn;
 import com.jfoenix.controls.JFXTreeTableView;
@@ -45,8 +46,12 @@ public class DoctorGuahaoListController {
 
     @FXML
     private JFXButton btn_logout;
+
+    @FXML
+    private JFXButton btn_back;
     @FXML
     private Label lb_title;
+
 
     @ActionHandler
     private FlowActionHandler actionHandler;
@@ -66,6 +71,16 @@ public class DoctorGuahaoListController {
             try {
                 State.getINSTANCE().logout();
                 navigateToLogin();
+            } catch (VetoException | FlowException exception) {
+                exception.printStackTrace();
+            }
+        });
+        btn_back.setGraphic(new ImageView(new Image("/images/back2.png")));
+        btn_back.setPrefHeight(20);
+        btn_back.setPrefWidth(20);
+        btn_back.setOnMouseClicked(event -> {
+            try {
+                navigateToBack();
             } catch (VetoException | FlowException exception) {
                 exception.printStackTrace();
             }
@@ -197,5 +212,8 @@ public class DoctorGuahaoListController {
         actionHandler.navigate(LoginController.class);
     }
 
+    private void navigateToBack() throws VetoException, FlowException {
+        actionHandler.navigate(DoctorController.class);
+    }
 
 }

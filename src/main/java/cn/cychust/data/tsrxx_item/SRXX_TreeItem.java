@@ -17,11 +17,14 @@ public class SRXX_TreeItem extends RecursiveTreeObject<SRXX_TreeItem> {
     public final StringProperty GHRC;
     public final StringProperty SRHJ;
 
-    public SRXX_TreeItem(String KSMC, String YSBH, String YSMC, String HZLB, Integer GHRC, Float SRHJ) {
+    public SRXX_TreeItem(String KSMC, String YSBH, String YSMC, Boolean SFZJ, Integer GHRC, Float SRHJ) {
         this.KSMC = new SimpleStringProperty(KSMC);
         this.YSBH = new SimpleStringProperty(YSBH);
         this.YSMC = new SimpleStringProperty(YSMC);
-        this.HZLB = new SimpleStringProperty(HZLB);
+        if (SFZJ)
+            this.HZLB = new SimpleStringProperty("专家号");
+        else
+            this.HZLB = new SimpleStringProperty("普通号");
         this.GHRC = new SimpleStringProperty(GHRC.toString());
         this.SRHJ = new SimpleStringProperty(SRHJ.toString());
     }

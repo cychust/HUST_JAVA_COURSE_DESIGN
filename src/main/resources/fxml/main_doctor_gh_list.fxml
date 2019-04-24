@@ -17,7 +17,6 @@
                 <Font size="24.0" />
             </font>
         </Label>
-      <JFXButton layoutX="0.0" layoutY="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" mnemonicParsing="false" text="Button" />
-
+        <JFXButton fx:id="btn_back" alignment="TOP_LEFT" layoutX="0.0" layoutY="0.0" mnemonicParsing="false" textAlignment="CENTER" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
     </children>
 </AnchorPane>

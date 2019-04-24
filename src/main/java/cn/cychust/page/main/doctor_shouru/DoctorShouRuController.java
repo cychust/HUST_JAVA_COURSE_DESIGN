@@ -2,27 +2,20 @@ package cn.cychust.page.main.doctor_shouru;
 
 import cn.cychust.State;
 import cn.cychust.data.tbrxx.source.TBRXXDataSource;
-import cn.cychust.data.tghxx_item.Database;
-import cn.cychust.data.tghxx_item.GHXX_Item;
-import cn.cychust.data.tghxx_item.GHXX_TreeItem;
-import cn.cychust.data.tghxx_item.Repository;
 import cn.cychust.data.tsrxx_item.SRXX_Item;
 import cn.cychust.data.tsrxx_item.SRXX_TreeItem;
 import cn.cychust.data.tsrxx_item.ShouruDataBase;
 import cn.cychust.data.tsrxx_item.ShouruRepository;
 import cn.cychust.page.login.LoginController;
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTreeTableColumn;
-import com.jfoenix.controls.JFXTreeTableView;
-import com.jfoenix.controls.RecursiveTreeItem;
-import com.jfoenix.controls.cells.editors.TextFieldEditorBuilder;
-import com.jfoenix.controls.cells.editors.base.GenericEditableTreeTableCell;
+import cn.cychust.page.main.doctor.DoctorController;
+import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import io.datafx.controller.ViewController;
 import io.datafx.controller.flow.FlowException;
 import io.datafx.controller.flow.context.ActionHandler;
 import io.datafx.controller.flow.context.FlowActionHandler;
 import io.datafx.controller.util.VetoException;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -31,8 +24,16 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import org.apache.log4j.Logger;
 
 import javax.annotation.PostConstruct;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -43,13 +44,39 @@ import java.util.List;
  **/
 @ViewController(value = "/fxml/main_doctor_shouru.fxml")
 public class DoctorShouRuController {
+
+
+    private final static Logger LOGGER = Logger.getLogger(DoctorShouRuController.class);
+
     @FXML
     private JFXTreeTableView tv_list;
 
     @FXML
     private JFXButton btn_logout;
+
+    @FXML
+    private JFXButton btn_back;
     @FXML
     private Label lb_title;
+
+    @FXML
+    private JFXDatePicker dp_start;
+
+    @FXML
+    private JFXComboBox<Integer> cb_start_hour;
+    @FXML
+    private JFXComboBox<Integer> cb_start_minute;
+
+    @FXML
+    private JFXButton btn_confirm;
+
+    @FXML
+    private JFXDatePicker dp_end;
+
+    @FXML
+    private JFXComboBox<Integer> cb_end_hour;
+    @FXML
+    private JFXComboBox<Integer> cb_end_minute;
 
     @ActionHandler
     private FlowActionHandler actionHandler;
@@ -58,6 +85,10 @@ public class DoctorShouRuController {
 
     TBRXXDataSource mTBRXXDataSource = new TBRXXDataSource();
 
+
+    ObservableList<Integer> hourInts = FXCollections.observableArrayList();
+
+    ObservableList<Integer> minuteInts = FXCollections.observableArrayList();
 
     @PostConstruct
     public void init() throws Exception {
@@ -75,32 +106,89 @@ public class DoctorShouRuController {
             }
         });
 
-        ShouruDataBase.getINSTANCE().getAllByYS(State.getT_ksys().getYSBH(), new ShouruRepository.LoadTsrxxItemCallback() {
-            @Override
-            public void onTasksLoaded(List<SRXX_Item> list) {
-                for (SRXX_Item item : list) {
-                    ghxxes_ti.add(new SRXX_TreeItem(item.getKSMC(), item.getYSBH(), item.getYSMC(),
-                            item.getHZLB(), item.getGHRC(), item.getSRHJ()));
-                }
-            }
-
-            @Override
-            public void onDataNotAvailable() {
-
+        btn_back.setGraphic(new ImageView(new Image("/images/back2.png")));
+        btn_back.setPrefHeight(20);
+        btn_back.setPrefWidth(20);
+        btn_back.setOnMouseClicked(event -> {
+            try {
+                navigateToBack();
+            } catch (VetoException | FlowException exception) {
+                exception.printStackTrace();
             }
         });
 
+        for (int i = 0; i < 24; i++) {
+            hourInts.add(i);
+        }
+        for (int i = 0; i < 60; i++) {
+            minuteInts.add(i);
+        }
+        dp_start.setValue(LocalDate.now());
+        dp_end.setValue(LocalDate.now());
 
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", "111111", 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", "111111", 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", "111111", 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", "111111", 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", "111111", 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", "111111", 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", "111111", 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", "111111", 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", "111111", 1, 20f));
+        cb_start_hour.setItems(hourInts);
+        cb_start_minute.setItems(minuteInts);
+        cb_end_hour.setItems(hourInts);
+        cb_end_minute.setItems(minuteInts);
+        cb_start_hour.setValue(0);
+        cb_start_minute.setValue(0);
+        cb_end_hour.setValue(23);
+        cb_end_minute.setValue(59);
 
+
+        btn_confirm.setOnMouseClicked(event -> {
+            LOGGER.info(cb_start_hour.getEditor().getText());
+            LOGGER.info(cb_end_hour.getEditor().getText());
+            getSpace(new Callback() {
+                @Override
+                public void getStartAndEndTime(Timestamp start, Timestamp end) {
+                    ShouruDataBase.getINSTANCE().getAllBetween(start, end, new ShouruRepository.LoadTsrxxItemCallback() {
+                        @Override
+                        public void onTasksLoaded(List<SRXX_Item> list) {
+                            for (SRXX_Item item : list) {
+                                ghxxes_ti.add(new SRXX_TreeItem(
+                                        item.getKSMC(),
+                                        item.getYSBH(),
+                                        item.getYSMC(),
+                                        item.isSFZJ(),
+                                        item.getGHRC(),
+                                        item.getSRHJ()
+                                ));
+                            }
+                        }
+
+                        @Override
+                        public void onDataNotAvailable() {
+                            ghxxes_ti.remove(0, ghxxes_ti.size());
+                        }
+                    });
+                }
+
+                @Override
+                public void error(ParseException e) {
+                    LOGGER.error("时间解析失败");
+                }
+            });
+        });
+
+        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
 
         JFXTreeTableColumn<SRXX_TreeItem, String> ksmcColumn = new JFXTreeTableColumn<>("科室名称");
         JFXTreeTableColumn<SRXX_TreeItem, String> ysbhColumn = new JFXTreeTableColumn<>("医生编号");
@@ -189,10 +277,56 @@ public class DoctorShouRuController {
         tv_list.setShowRoot(false);
         tv_list.setEditable(true);
 
+
     }
 
     private void navigateToLogin() throws VetoException, FlowException {
         actionHandler.navigate(LoginController.class);
     }
+
+    private void navigateToBack() throws VetoException, FlowException {
+        actionHandler.navigate(DoctorController.class);
+    }
+
+    private void getSpace(Callback callback) {
+        Timestamp start;
+        Timestamp end;
+        LocalDate startDate = dp_start.getValue();
+        LocalDate endDate = dp_end.getValue();
+        String startTime;
+        String endTime;
+        startTime = parseSingleTime(cb_start_hour) + ":" + parseSingleTime(cb_start_minute);
+        endTime = parseSingleTime(cb_end_hour) + ":" + parseSingleTime(cb_end_minute);
+
+        LOGGER.info(startDate.toString());
+        try {
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd hh:mm");
+            Date startDateTime = df.parse(startDate.toString() + " " + startTime);
+            Date endDateTime = df.parse(endDate.toString() + " " + endTime);
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(startDateTime);
+            start = new Timestamp(cal.getTimeInMillis());
+            cal.setTime(endDateTime);
+            end = new Timestamp(cal.getTimeInMillis());
+
+            callback.getStartAndEndTime(start, end);
+        } catch (ParseException e) {
+            callback.error(e);
+        }
+    }
+
+    static interface Callback {
+        void getStartAndEndTime(Timestamp start, Timestamp end);
+
+        void error(ParseException e);
+    }
+
+
+    private String parseSingleTime(JFXComboBox cb) {
+        if (Integer.parseInt(cb.getEditor().getText()) < 10)
+            return "0" + cb.getEditor().getText();
+        return cb.getEditor().getText();
+    }
+
 
 }

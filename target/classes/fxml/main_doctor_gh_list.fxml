@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -18,6 +17,6 @@
                 <Font size="24.0" />
             </font>
         </Label>
-
+        <JFXButton fx:id="btn_back" alignment="TOP_LEFT" layoutX="0.0" layoutY="0.0" mnemonicParsing="false" textAlignment="CENTER" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
     </children>
 </AnchorPane>

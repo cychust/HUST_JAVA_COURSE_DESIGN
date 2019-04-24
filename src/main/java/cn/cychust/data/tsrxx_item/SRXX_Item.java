@@ -10,7 +10,7 @@ public class SRXX_Item {
     private String KSMC;
     private String YSBH;
     private String YSMC;
-    private String HZLB;
+    private boolean SFZJ;
     private int GHRC;
     private float SRHJ;
 
@@ -41,12 +41,12 @@ public class SRXX_Item {
         this.YSMC = YSMC;
     }
 
-    public String getHZLB() {
-        return HZLB;
+    public boolean isSFZJ() {
+        return SFZJ;
     }
 
-    public void setHZLB(String HZLB) {
-        this.HZLB = HZLB;
+    public void setSFZJ(boolean SFZJ) {
+        this.SFZJ = SFZJ;
     }
 
     public int getGHRC() {

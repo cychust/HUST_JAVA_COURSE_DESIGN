@@ -20,13 +20,16 @@
             </font>
         </Label>
 
-        <JFXDatePicker defaultColor="#0088ff" layoutX="77.0" layoutY="450.0" />
-        <JFXDatePicker defaultColor="#0088ff" layoutX="413.0" layoutY="450.0" />
-      <JFXComboBox layoutX="191.0" layoutY="450.0" prefHeight="26.0" prefWidth="12.0" />
-      <JFXComboBox layoutX="249.0" layoutY="450.0" prefHeight="26.0" prefWidth="0.0" />
-      <JFXComboBox layoutX="527.0" layoutY="450.0" prefHeight="26.0" prefWidth="0.0" />
-      <JFXComboBox layoutX="586.0" layoutY="450.0" prefHeight="26.0" prefWidth="4.0" />
-      <Label layoutX="36.0" layoutY="455.0" text="起始时间" />
-      <Label layoutX="371.0" layoutY="455.0" text="截止时间" />
+        <JFXDatePicker fx:id="dp_start" defaultColor="#0088ff" layoutX="77.0" layoutY="450.0" />
+        <JFXDatePicker fx:id="dp_end" defaultColor="#0088ff" layoutX="413.0" layoutY="450.0" />
+        <JFXComboBox fx:id="cb_start_hour" editable="true" layoutX="191.0" layoutY="450.0" prefHeight="26.0" prefWidth="12.0" />
+        <JFXComboBox fx:id="cb_start_minute" editable="true" layoutX="249.0" layoutY="450.0" prefHeight="26.0" prefWidth="0.0" />
+        <JFXComboBox fx:id="cb_end_hour" editable="true" layoutX="527.0" layoutY="450.0" prefHeight="26.0" prefWidth="0.0" />
+        <JFXComboBox fx:id="cb_end_minute" editable="true" layoutX="586.0" layoutY="450.0" prefHeight="26.0" prefWidth="4.0" />
+        <Label layoutX="25.0" layoutY="455.0" text="起始时间" />
+        <Label layoutX="361.0" layoutY="455.0" text="截止时间" />
+        <JFXButton fx:id="btn_back" alignment="TOP_LEFT" layoutX="0.0" layoutY="0.0" mnemonicParsing="false" textAlignment="CENTER" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+      <JFXButton fx:id="btn_confirm" layoutX="651.0" layoutY="450.0" mnemonicParsing="false" text="确定" />
+
     </children>
 </AnchorPane>

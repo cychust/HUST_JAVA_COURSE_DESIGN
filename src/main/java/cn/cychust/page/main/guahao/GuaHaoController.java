@@ -1,17 +1,26 @@
 package cn.cychust.page.main.guahao;
 
+import cn.cychust.State;
 import cn.cychust.data.tksxx.T_KSXX;
 import cn.cychust.data.tksxx.source.TKSXXDataSource;
 import cn.cychust.data.tksxx.source.TKSXXRepository;
 import cn.cychust.data.tksys.T_KSYS;
 import cn.cychust.data.tksys.source.TKSYSDataSource;
 import cn.cychust.data.tksys.source.TKSYSRepository;
+import cn.cychust.page.login.LoginController;
+import cn.cychust.page.main.patient.PatientController;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import io.datafx.controller.ViewController;
-import io.reactivex.rxjavafx.transformers.FxFlowableTransformers;
+import io.datafx.controller.flow.FlowException;
+import io.datafx.controller.flow.context.ActionHandler;
+import io.datafx.controller.flow.context.FlowActionHandler;
+import io.datafx.controller.util.VetoException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import org.apache.log4j.Logger;
 
 import javax.annotation.PostConstruct;
@@ -37,6 +46,15 @@ public class GuaHaoController {
     @FXML
     private JFXComboBox<String> cb_hzmc;
 
+    @FXML
+    private JFXButton btn_logout;
+
+    @ActionHandler
+    private FlowActionHandler actionHandler;
+
+
+    @FXML
+    private JFXButton btn_back;
 //    private List<String> ksmcList = null;
 
     private ObservableList<String> mValue = null;
@@ -66,6 +84,27 @@ public class GuaHaoController {
             }
         });
 
+        btn_logout.setGraphic(new ImageView(new Image("/images/logout.png")));
+        btn_logout.setMaxHeight(40);
+        btn_logout.setMaxWidth(40);
+        btn_logout.setOnMouseClicked(e -> {
+            try {
+                State.getINSTANCE().logout();
+                navigateToLogin();
+            } catch (VetoException | FlowException exception) {
+                exception.printStackTrace();
+            }
+        });
+        btn_back.setGraphic(new ImageView(new Image("/images/back2.png")));
+        btn_back.setPrefHeight(20);
+        btn_back.setPrefWidth(20);
+        btn_back.setOnMouseClicked(event -> {
+            try {
+                navigateToBack();
+            } catch (VetoException | FlowException exception) {
+                exception.printStackTrace();
+            }
+        });
         cb_ysxm.setItems(ysxmList);
         cb_hzlb.setItems(hzlbList);
         cb_ksmc.focusedProperty().addListener((observable, oldValue, newValue) -> {
@@ -121,4 +160,13 @@ public class GuaHaoController {
         });
 
     }
+
+    private void navigateToLogin() throws VetoException, FlowException {
+        actionHandler.navigate(LoginController.class);
+    }
+
+    private void navigateToBack() throws VetoException, FlowException {
+        actionHandler.navigate(PatientController.class);
+    }
+
 }
