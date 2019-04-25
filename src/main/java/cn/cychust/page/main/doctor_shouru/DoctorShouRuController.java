@@ -307,6 +307,7 @@ public class DoctorShouRuController {
         getSpace(new Callback() {
             @Override
             public void getStartAndEndTime(Timestamp start, Timestamp end) {
+                ghxxes_ti.remove(0, ghxxes_ti.size());
                 ShouruDataBase.getINSTANCE().getAllBetween(start, end, new ShouruRepository.LoadTsrxxItemCallback() {
                     @Override
                     public void onTasksLoaded(List<SRXX_Item> list) {
@@ -336,7 +337,8 @@ public class DoctorShouRuController {
         });
     }
 
-    private void getAllData(){
+    private void getAllData() {
+        ghxxes_ti.remove(0, ghxxes_ti.size());
         ShouruDataBase.getINSTANCE().getAll(new ShouruRepository.LoadTsrxxItemCallback() {
             @Override
             public void onTasksLoaded(List<SRXX_Item> list) {

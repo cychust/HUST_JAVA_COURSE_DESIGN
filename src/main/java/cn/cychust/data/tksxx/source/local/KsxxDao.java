@@ -4,6 +4,7 @@ import cn.cychust.data.tbrxx.T_BRXX;
 import cn.cychust.comm.Dao;
 import cn.cychust.data.tbrxx.source.local.dao.UserDao;
 import cn.cychust.data.tksxx.T_KSXX;
+import cn.cychust.data.tksys.T_KSYS;
 import cn.cychust.mysql.C3p0helper;
 import cn.cychust.mysql.DatabaseManager;
 import org.apache.log4j.Logger;
@@ -38,6 +39,10 @@ public class KsxxDao extends Dao {
     private final static String FIND_ALL = "SELECT * FROM T_KSXX";
 
     private final static String UPDATE_ONE_BY_ID = "UPDATE T_KSXX SET KSMC=?, PYZS=? WHERE KSBH=?";
+
+
+    private final static String FIND_ALL_BY_PYZS = "SELECT * FROM T_KSXX WHERE PYZS LIKE ?";
+
 
     /**
      * 创建表
@@ -100,6 +105,34 @@ public class KsxxDao extends Dao {
         try {
             connection = DatabaseManager.getINSTANCE().getConnection();
             resultSet = connection.createStatement().executeQuery(FIND_ALL);
+            while (resultSet.next()) {
+                T_KSXX tKsxx = new T_KSXX();
+                tKsxx.setKSBH(resultSet.getString(1));
+                tKsxx.setKSMC(resultSet.getString(2));
+                tKsxx.setPYZC(resultSet.getString(3));
+                list.add(tKsxx);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (PropertyVetoException e) {
+            e.printStackTrace();
+        } finally {
+            C3p0helper.attemptClose(resultSet);
+            C3p0helper.attemptClose(connection);
+        }
+        return Optional.ofNullable(list);
+    }
+
+    public static Optional findAllByPYZS(String pyzs) {
+        List<T_KSXX> list = new ArrayList<>();
+        ResultSet resultSet = null;
+        Connection connection = null;
+        PreparedStatement statement = null;
+        try {
+            connection = DatabaseManager.getINSTANCE().getConnection();
+            statement = connection.prepareStatement(FIND_ALL_BY_PYZS);
+            statement.setString(1, "%" + pyzs + "%");
+            resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 T_KSXX tKsxx = new T_KSXX();
                 tKsxx.setKSBH(resultSet.getString(1));

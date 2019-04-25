@@ -38,6 +38,21 @@ public class TKSXXDataSource implements TKSXXRepository {
     }
 
     @Override
+    public void findAllByPYZS(String pyzs, LoadTksxxsCallback callback) {
+        Runnable runnable = () -> {
+            Optional optional = KsxxDao.findAllByPYZS(pyzs);
+            if (optional.isPresent())
+                Platform.runLater(() -> {
+                    callback.onTasksLoaded(((List<T_KSXX>) optional.get()));
+                });
+            else Platform.runLater(() -> {
+                callback.onDataNotAvailable();
+            });
+        };
+        executor.execute(runnable);
+    }
+
+    @Override
     public void getOne(String id, GetTksxxCallback callback) {
 
     }

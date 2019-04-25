@@ -114,6 +114,7 @@ public class KsysDao extends Dao {
     }
 
 
+
     public static Optional findAllByKSBH(String ksbh) {
         List<T_KSYS> list = new ArrayList<>();
         ResultSet resultSet = null;
@@ -175,4 +176,5 @@ public class KsysDao extends Dao {
         }
         return Optional.of(result);
     }
+
 }

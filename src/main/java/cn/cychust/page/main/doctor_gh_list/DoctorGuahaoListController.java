@@ -8,6 +8,7 @@ import cn.cychust.data.tbrxx.source.TBRXXDataSource;
 import cn.cychust.data.tghxx_item.Repository;
 import cn.cychust.page.login.LoginController;
 import cn.cychust.page.main.doctor.DoctorController;
+import cn.cychust.page.main.doctor_shouru.DoctorShouRuController;
 import cn.cychust.page.main.patient.PatientController;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTreeTableColumn;
@@ -29,6 +30,7 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import org.apache.log4j.Logger;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
@@ -42,6 +44,7 @@ import java.util.List;
 @ViewController(value = "/fxml/main_doctor_gh_list.fxml")
 public class DoctorGuahaoListController {
 
+    private static final Logger LOGGER = Logger.getLogger(DoctorGuahaoListController.class);
     @FXML
     private JFXTreeTableView tv_list;
 
@@ -86,13 +89,16 @@ public class DoctorGuahaoListController {
                 exception.printStackTrace();
             }
         });
+        ghxxes_ti.remove(0, ghxxes_ti.size());
         Database.getINSTANCE().getAllByYS(State.getT_ksys().getYSBH(), new Repository.LoadTghxxItemCallback() {
             @Override
             public void onTasksLoaded(List<GHXX_Item> list) {
                 for (GHXX_Item ghxx : list
                         ) {
                     ghxxes_ti.add(new GHXX_TreeItem(ghxx.getGHBH(), ghxx.getBRMC(), ghxx.getRQSJ().toString(), ghxx.getHZLB()));
+                    LOGGER.info(ghxx.getGHBH());
                 }
+
             }
 
             @Override

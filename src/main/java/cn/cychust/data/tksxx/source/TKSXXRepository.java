@@ -17,6 +17,9 @@ public interface TKSXXRepository {
 
     void createTable();
 
+    void findAllByPYZS(String pyzs, LoadTksxxsCallback callback);
+
+
     interface LoadTksxxsCallback {
         void onTasksLoaded(List<T_KSXX> list);
 

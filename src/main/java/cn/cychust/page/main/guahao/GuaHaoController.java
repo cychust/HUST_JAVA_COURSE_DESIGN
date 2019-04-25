@@ -87,7 +87,7 @@ public class GuaHaoController {
     @FXML
     private Label lb_ye;
 
-    private ObservableList<String> mValue = null;
+    private ObservableList<String> mValue = FXCollections.observableArrayList();
 
     private ObservableList<String> ysxmList = FXCollections.observableArrayList();
 
@@ -97,15 +97,16 @@ public class GuaHaoController {
 
     @PostConstruct
     public void init() throws Exception {
+
+        cb_ksmc.setItems(mValue);
+
         TKSXXDataSource.getINSTANCE().getAll(new TKSXXRepository.LoadTksxxsCallback() {
             @Override
             public void onTasksLoaded(List<T_KSXX> list) {
 //                ksmcList = new ArrayList<>();
-                mValue = FXCollections.observableArrayList();
                 for (T_KSXX ksxx : list) {
                     mValue.add(ksxx.getKSBH() + "  " + ksxx.getKSMC());
                 }
-                cb_ksmc.setItems(mValue);
             }
 
             @Override
@@ -141,13 +142,15 @@ public class GuaHaoController {
                 exception.printStackTrace();
             }
         });
+
         cb_ysxm.setItems(ysxmList);
         cb_hzlb.setItems(hzlbList);
         cb_hzmc.setItems(hzmcList);
+
         cb_ksmc.valueProperty().addListener((observable, oldValue, newValue) -> {
-            LOGGER.info("aaa");
-            LOGGER.info(cb_ksmc.getEditor().getText());
-            LOGGER.info(cb_ksmc.getAccessibleText());
+//            LOGGER.info("aaa");
+//            LOGGER.info(cb_ksmc.getEditor().getText());
+//            LOGGER.info(cb_ksmc.getAccessibleText());
             ysxmList.remove(0, ysxmList.size());
             if (newValue == null)
                 return;
@@ -167,6 +170,43 @@ public class GuaHaoController {
             });
 
         });
+
+//        cb_ksmc.getEditor().textProperty().addListener((observable, oldValue, newValue) -> {
+//            if (newValue == null)
+//                return;
+//            mValue.remove(0, mValue.size());
+//            if (newValue.length() == 0) {
+//
+//                TKSXXDataSource.getINSTANCE().getAll(new TKSXXRepository.LoadTksxxsCallback() {
+//                    @Override
+//                    public void onTasksLoaded(List<T_KSXX> list) {
+////                ksmcList = new ArrayList<>();
+//                        for (T_KSXX ksxx : list) {
+//                            mValue.add(ksxx.getKSBH() + "  " + ksxx.getKSMC());
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onDataNotAvailable() {
+//
+//                    }
+//                });
+//            } else
+//                TKSXXDataSource.getINSTANCE().findAllByPYZS(newValue, new TKSXXRepository.LoadTksxxsCallback() {
+//                    @Override
+//                    public void onTasksLoaded(List<T_KSXX> list) {
+//                        LOGGER.info("ccccc");
+//                        for (T_KSXX t_ksxx : list) {
+//                            mValue.add(t_ksxx.getKSBH() + " " + t_ksxx.getKSMC());
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onDataNotAvailable() {
+//                        LOGGER.info("dddd");
+//                    }
+//                });
+//        });
 
         cb_ysxm.valueProperty().addListener((observable, oldValue, newValue) -> {
             if (ysxmList.size() > 0)

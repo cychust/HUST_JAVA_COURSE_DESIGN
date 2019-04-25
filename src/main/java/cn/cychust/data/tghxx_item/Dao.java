@@ -23,7 +23,7 @@ public class Dao {
 
 
     private final static String FIND_ALL_BY_YSBH =
-            "SELECT BRMC, GHBH, RQSJ, HZMC  " +
+            "SELECT BRMC, T_GHXX.GHBH, RQSJ, HZMC  " +
                     "FROM T_GHXX, T_BRXX, T_HZXX WHERE T_GHXX.BRBH = T_BRXX.BRBH AND T_GHXX.HZBH=T_HZXX.HZBH AND T_GHXX.YSBH = ?";
 
 

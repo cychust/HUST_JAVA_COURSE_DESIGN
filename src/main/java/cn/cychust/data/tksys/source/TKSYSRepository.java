@@ -1,5 +1,6 @@
 package cn.cychust.data.tksys.source;
 
+import cn.cychust.data.thzxx.source.THZXXRepository;
 import cn.cychust.data.tksys.T_KSYS;
 
 import java.util.List;
@@ -14,6 +15,9 @@ public interface TKSYSRepository {
     void getOne(String userId, String password, GetTksysCallback callback);
 
     void getOneByYSBH(String userId, GetTksysCallback callback);
+
+//    void getAllByPYZS(String pyzs, LoadTksysesCallback callback);
+
 
     void getAll(LoadTksysesCallback callback);
 
