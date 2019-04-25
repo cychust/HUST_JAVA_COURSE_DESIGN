@@ -2,6 +2,7 @@ package cn.cychust.data.tghxx.source;
 
 import cn.cychust.data.tghxx.T_GHXX;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ public interface TGHXXRepository {
 
     void getAll(LoadTghxxsCallback callback);
 
-    void saveOne(T_GHXX newOne);
+    void saveOne(T_GHXX newOne, Timestamp start, float ycje,GetTghxxCallback callback);
 
     void updateOne(T_GHXX newOne);
 

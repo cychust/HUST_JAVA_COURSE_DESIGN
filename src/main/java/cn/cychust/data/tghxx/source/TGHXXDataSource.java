@@ -6,6 +6,7 @@ import cn.cychust.data.tghxx.source.dao.GhxxDao;
 import cn.cychust.data.tksys.source.TKSYSDataSource;
 import javafx.application.Platform;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ExecutorService;
@@ -32,7 +33,6 @@ public class TGHXXDataSource implements TGHXXRepository {
         }
         return INSTANCE;
     }
-
 
 
     @Override
@@ -62,9 +62,13 @@ public class TGHXXDataSource implements TGHXXRepository {
     }
 
     @Override
-    public void saveOne(T_GHXX newOne) {
+    public void saveOne(T_GHXX newOne, Timestamp start, float ycje, GetTghxxCallback callback) {
         Runnable runnable = () -> {
-            GhxxDao.saveOne(newOne);
+            Optional option = GhxxDao.saveOne(newOne, start, ycje);
+            if (option.isPresent())
+                Platform.runLater(() -> callback.onTasksLoaded((T_GHXX) option.get()));
+            else
+                Platform.runLater(() -> callback.onDataNotAvailable());
         };
         executor.execute(runnable);
     }

@@ -15,6 +15,8 @@ import java.util.List;
 public interface ShouruRepository {
     void getAllBetween(Timestamp start, Timestamp end, LoadTsrxxItemCallback callback);
 
+    void getAll(LoadTsrxxItemCallback callback);
+
     interface LoadTsrxxItemCallback {
         void onTasksLoaded(List<SRXX_Item> list);
 

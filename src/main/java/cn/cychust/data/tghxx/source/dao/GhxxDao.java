@@ -1,18 +1,14 @@
 package cn.cychust.data.tghxx.source.dao;
 
 import cn.cychust.comm.Dao;
-import cn.cychust.data.tbrxx.T_BRXX;
 import cn.cychust.data.tghxx.T_GHXX;
-import cn.cychust.data.tksys.T_KSYS;
 import cn.cychust.mysql.C3p0helper;
 import cn.cychust.mysql.DatabaseManager;
-import javafx.beans.property.StringProperty;
+import io.reactivex.annotations.NonNull;
+import org.apache.log4j.Logger;
 
 import java.beans.PropertyVetoException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -25,6 +21,7 @@ import java.util.Optional;
  **/
 public class GhxxDao extends Dao {
 
+    private final static Logger LOGGER = Logger.getLogger(GhxxDao.class);
     private final static String CREATE_TABLE =
             "CREATE TABLE IF NOT EXISTS T_GHXX(" +
                     "GHBH CHAR(6) not NULL, " +
@@ -48,16 +45,41 @@ public class GhxxDao extends Dao {
         return createTable(CREATE_TABLE);
     }
 
-    public static Optional saveOne(T_GHXX t_ghxx) {
+    public static synchronized Optional saveOne(@NonNull T_GHXX t_ghxx, @NonNull Timestamp start, float ycje) {
         if (t_ghxx == null) {
             throw new NullPointerException("t_brxx can not be null");
         }
         T_GHXX result = null;
+        ResultSet resultSet = null;
         Connection connection = null;
         PreparedStatement statement = null;
+
         try {
+            int count = 0;
+            int bhCount = 0;
+            int limitCount = 0;
             connection = DatabaseManager.getINSTANCE().getConnection();
+            statement = connection.prepareStatement("SELECT COUNT(*) FROM T_GHXX where RQSJ BETWEEN ? AND ?");
+            statement.setTimestamp(1, start);
+            statement.setTimestamp(2, new Timestamp(System.currentTimeMillis()));
+            resultSet = statement.executeQuery();
+            while (resultSet.next())
+                count = resultSet.getInt(1);
+            statement = connection.prepareStatement("SELECT GHRS FROM T_HZXX WHERE HZBH = ?");
+            statement.setString(1, t_ghxx.getHZBH());
+            resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                limitCount = resultSet.getInt(1);
+            }
+            if (count >= limitCount)
+                return Optional.empty();
+            statement = connection.prepareStatement("SELECT COUNT(*) FROM T_GHXX");
+            resultSet = statement.executeQuery();
+            while (resultSet.next())
+                bhCount = resultSet.getInt(1);
             statement = connection.prepareStatement(ADD_ONE_STATEMENT);
+            t_ghxx.setGHBH(addOne(bhCount));                //
+            t_ghxx.setGHRC(count + 1);
             statement.setString(1, t_ghxx.getGHBH());
             statement.setString(2, t_ghxx.getHZBH());
             statement.setString(3, t_ghxx.getYSBH());
@@ -67,16 +89,28 @@ public class GhxxDao extends Dao {
             statement.setFloat(7, t_ghxx.getGHFY());
             statement.setTimestamp(8, t_ghxx.getRQSJ());
             statement.execute();
+
+            statement = connection.prepareStatement("UPDATE T_BRXX SET YCJE = ? WHERE BRBH = ?");
+            statement.setFloat(1, ycje);
+            statement.setString(2, t_ghxx.getBRBH());
+            statement.executeUpdate();
+
             result = t_ghxx;
         } catch (SQLException e) {
             e.printStackTrace();
+            try {
+                connection.rollback();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
         } catch (PropertyVetoException e) {
             e.printStackTrace();
         } finally {
             C3p0helper.attemptClose(statement);
             C3p0helper.attemptClose(connection);
+            C3p0helper.attemptClose(resultSet);
         }
-        return Optional.of(result);
+        return Optional.ofNullable(result);
     }
 
     public static Optional findAllByYSBH(String ysbh) {
@@ -115,5 +149,7 @@ public class GhxxDao extends Dao {
         return Optional.of(result);
     }
 
-
+    public static String addOne(Integer count) {
+        return String.format("%06d", count + 1);
+    }
 }

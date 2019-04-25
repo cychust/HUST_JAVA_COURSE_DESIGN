@@ -85,32 +85,6 @@ public class DoctorGuahaoListController {
                 exception.printStackTrace();
             }
         });
-//        TGHXXDataSource.getINSTANCE().findAllByYSBH(State.getT_ksys().getYSBH(), new TGHXXRepository.LoadTghxxsCallback() {
-//            @Override
-//            public void onTasksLoaded(List<T_GHXX> ghxxes) {
-//                for (T_GHXX ghxx : ghxxes
-//                        ) {
-//                    ghxxes_ti.add(new GHXX_TreeItem(ghxx.getGHBH(), ghxx.getBRBH(), ghxx.getRQSJ().toString()));
-//                    mTBRXXDataSource.getOne(ghxx.getBRBH(), new TBRXXRepository.GetTbrxxCallback() {
-//                        @Override
-//                        public void onTasksLoaded(T_BRXX t_brxx) {
-//
-//                        }
-//
-//                        @Override
-//                        public void onDataNotAvailable() {
-//
-//                        }
-//                    });
-//
-//                }
-//            }
-//
-//            @Override
-//            public void onDataNotAvailable() {
-//
-//            }
-//        });
         Database.getINSTANCE().getAllByYS(State.getT_ksys().getYSBH(), new Repository.LoadTghxxItemCallback() {
             @Override
             public void onTasksLoaded(List<GHXX_Item> list) {
@@ -125,19 +99,6 @@ public class DoctorGuahaoListController {
 
             }
         });
-
-
-        ghxxes_ti.add(new GHXX_TreeItem("111", "1111", "1111", "111111"));
-        ghxxes_ti.add(new GHXX_TreeItem("111", "1111", "1111", "111111"));
-        ghxxes_ti.add(new GHXX_TreeItem("111", "1111", "1111", "111111"));
-        ghxxes_ti.add(new GHXX_TreeItem("111", "1111", "1111", "111111"));
-        ghxxes_ti.add(new GHXX_TreeItem("111", "1111", "1111", "111111"));
-        ghxxes_ti.add(new GHXX_TreeItem("111", "1111", "1111", "111111"));
-        ghxxes_ti.add(new GHXX_TreeItem("111", "1111", "1111", "111111"));
-        ghxxes_ti.add(new GHXX_TreeItem("111", "1111", "1111", "111111"));
-        ghxxes_ti.add(new GHXX_TreeItem("111", "1111", "1111", "111111"));
-        ghxxes_ti.add(new GHXX_TreeItem("111", "1111", "1111", "111111"));
-
 
         JFXTreeTableColumn<GHXX_TreeItem, String> ghColumn = new JFXTreeTableColumn<>("挂号编号");
         JFXTreeTableColumn<GHXX_TreeItem, String> brmcColumn = new JFXTreeTableColumn<>("病人名称");

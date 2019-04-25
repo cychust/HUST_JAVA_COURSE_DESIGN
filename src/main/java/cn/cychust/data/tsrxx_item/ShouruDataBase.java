@@ -45,4 +45,21 @@ public class ShouruDataBase implements ShouruRepository {
         };
         mExecutorService.execute(runnable);
     }
+
+    @Override
+    public void getAll(LoadTsrxxItemCallback callback) {
+        Runnable runnable = () -> {
+            Optional optional = Dao.findAll();
+            if (optional.isPresent()) {
+                Platform.runLater(() -> {
+                    callback.onTasksLoaded((List) optional.get());
+                });
+            } else
+                Platform.runLater(() -> {
+                    callback.onDataNotAvailable();
+                });
+
+        };
+        mExecutorService.execute(runnable);
+    }
 }

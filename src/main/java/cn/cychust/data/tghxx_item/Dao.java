@@ -42,7 +42,7 @@ public class Dao {
                 item.setGHBH(resultSet.getString("GHBH"));
                 item.setBRMC(resultSet.getString("BRMC"));
                 item.setRQSJ(resultSet.getString("RQSJ"));
-                item.setHZLB(resultSet.getString("HZLB"));
+                item.setHZLB(resultSet.getString("HZMC"));
                 list.add(item);
             }
         } catch (SQLException e) {

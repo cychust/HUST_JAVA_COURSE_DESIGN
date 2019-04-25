@@ -1,9 +1,9 @@
 package cn.cychust.page.main.guahao;
 
 import cn.cychust.State;
-import cn.cychust.data.tbrxx.source.TBRXXDataSource;
 import cn.cychust.data.tghxx.T_GHXX;
 import cn.cychust.data.tghxx.source.TGHXXDataSource;
+import cn.cychust.data.tghxx.source.TGHXXRepository;
 import cn.cychust.data.thzxx.T_HZXX;
 import cn.cychust.data.thzxx.source.THZXXDatasource;
 import cn.cychust.data.thzxx.source.THZXXRepository;
@@ -15,6 +15,7 @@ import cn.cychust.data.tksys.source.TKSYSDataSource;
 import cn.cychust.data.tksys.source.TKSYSRepository;
 import cn.cychust.page.login.LoginController;
 import cn.cychust.page.main.patient.PatientController;
+import cn.cychust.util.DialogUtil;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -32,6 +33,7 @@ import org.apache.log4j.Logger;
 
 import javax.annotation.PostConstruct;
 import java.sql.Timestamp;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -193,6 +195,8 @@ public class GuaHaoController {
                 hzmcList.remove(0, hzmcList.size());
             if (cb_ksmc.getEditor().getText() != null && cb_ksmc.getEditor().getText().length() != 0) {
                 String ksbh = cb_ksmc.getEditor().getText().split(" ")[0].trim();
+                if (newValue == null)
+                    return;
                 boolean sfzj = newValue.equals("专家号");
                 THZXXDatasource.getINSTANCE().getHzmcByKsbhAndSfzj(ksbh, sfzj, new THZXXRepository.LoadThzxxsCallback() {
                     @Override
@@ -215,6 +219,8 @@ public class GuaHaoController {
 
         tf_real_pay.setDisable(true);
         cb_hzmc.valueProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue == null)
+                return;
             String hzbh = newValue.split(" ")[0].trim();
             THZXXDatasource.getINSTANCE().getOne(hzbh, new THZXXRepository.GetThzxxCallback() {
                 @Override
@@ -224,6 +230,8 @@ public class GuaHaoController {
                     if (State.getT_brxx().getYCJE() < t_hzxx.getGHFY()) {
                         tf_real_pay.setDisable(false);
                         tf_real_pay.setText("0");
+                    } else {
+                        tf_zl.setText(String.valueOf(State.getT_brxx().getYCJE() - t_hzxx.getGHFY()));
                     }
                 }
 
@@ -236,9 +244,17 @@ public class GuaHaoController {
 
 
         btn_confirm.setOnMouseClicked(event -> {
+            if (tf_zl.getText().length() == 0)
+                return;
+            if (tf_zl.getText().charAt(0) == '-') {
+//                SnackbarUtil.show("余额不足，请充足够的值");
+                new DialogUtil.Builder().title("警告").content("余额不足，请充足够的值").root(btn_confirm).show();
+//                DialogUtil.show(btn_confirm);
+                return;
+            }
             State.getT_brxx().setYCJE(Float.valueOf(tf_zl.getText()));    //更新病人登录状态
-            TBRXXDataSource source = new TBRXXDataSource();
-            source.updateOne(State.getT_brxx());                         //更新病人数据库状态
+//            TBRXXDataSource source = new TBRXXDataSource();
+//            source.updateOne(State.getT_brxx());                         //更新病人数据库状态
             T_GHXX newOne = new T_GHXX();
             newOne.setGHBH("");                                         //无用
             newOne.setHZBH(cb_hzmc.getEditor().getText().split(" ")[0].trim());
@@ -248,7 +264,26 @@ public class GuaHaoController {
             newOne.setTHBZ(false);                                        //退号标志
             newOne.setGHFY(Float.valueOf(tf_to_pay.getText()));
             newOne.setRQSJ(new Timestamp(System.currentTimeMillis()));
-//            TGHXXDataSource.getINSTANCE().saveOne(newOne);
+            TGHXXDataSource.getINSTANCE().saveOne(newOne, new Timestamp(getZeroHour()), Float.valueOf(tf_zl.getText()),
+                    new TGHXXRepository.GetTghxxCallback() {
+                        @Override
+                        public void onTasksLoaded(T_GHXX t_ghxx) {
+                            DialogUtil.Builder builder = new DialogUtil.Builder();
+                            builder.title("成功").content(dialogContent(t_ghxx)).root(btn_confirm)
+                                    .show(() -> {
+                                        doClear();
+                                    });
+                        }
+
+                        @Override
+                        public void onDataNotAvailable() {
+                            DialogUtil.Builder builder = new DialogUtil.Builder();
+                            builder.title("错误").content("挂号失败").root(btn_confirm).show();
+                        }
+                    });                //添加
+            DialogUtil.Builder builder = new DialogUtil.Builder();
+            builder.content("").title("挂号成功").root(btn_confirm).show();
+
         });
         tf_real_pay.setText(String.valueOf(State.getT_brxx().getYCJE()));
 
@@ -259,15 +294,7 @@ public class GuaHaoController {
         });
 
         btn_clear.setOnMouseClicked(event -> {
-            cb_hzmc.getEditor().setText("");
-            cb_hzlb.getEditor().setText("");
-            cb_ksmc.getEditor().setText("");
-            cb_ysxm.getEditor().setText("");
-            tf_real_pay.setText("");
-            tf_real_pay.setDisable(true);
-            tf_zl.setText("");
-            tf_to_pay.setText("");
-            tf_ghhm.setText("");
+            doClear();
         });
 
     }
@@ -287,4 +314,32 @@ public class GuaHaoController {
             return 0 - Float.valueOf(second);
     }
 
+    private long getZeroHour() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        return calendar.getTimeInMillis();
+    }
+
+    private String dialogContent(T_GHXX t_ghxx) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("挂号编号    ： " + t_ghxx.getGHBH());
+        builder.append("\n实际挂号费用 :  " + t_ghxx.getGHFY());
+        builder.append("\n挂号时间    ： " + t_ghxx.getRQSJ());
+        return builder.toString();
+    }
+
+    private void doClear() {
+        cb_hzmc.getEditor().setText("");
+        cb_hzlb.getEditor().setText("");
+        cb_ksmc.getEditor().setText("");
+        cb_ysxm.getEditor().setText("");
+        tf_real_pay.setText("");
+        tf_real_pay.setDisable(true);
+        tf_zl.setText("");
+        tf_to_pay.setText("");
+        tf_ghhm.setText("");
+    }
 }

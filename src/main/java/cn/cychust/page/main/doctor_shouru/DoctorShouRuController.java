@@ -136,59 +136,31 @@ public class DoctorShouRuController {
         cb_end_minute.setValue(59);
 
 
+        getAllData();
         btn_confirm.setOnMouseClicked(event -> {
             LOGGER.info(cb_start_hour.getEditor().getText());
             LOGGER.info(cb_end_hour.getEditor().getText());
-            getSpace(new Callback() {
-                @Override
-                public void getStartAndEndTime(Timestamp start, Timestamp end) {
-                    ShouruDataBase.getINSTANCE().getAllBetween(start, end, new ShouruRepository.LoadTsrxxItemCallback() {
-                        @Override
-                        public void onTasksLoaded(List<SRXX_Item> list) {
-                            for (SRXX_Item item : list) {
-                                ghxxes_ti.add(new SRXX_TreeItem(
-                                        item.getKSMC(),
-                                        item.getYSBH(),
-                                        item.getYSMC(),
-                                        item.isSFZJ(),
-                                        item.getGHRC(),
-                                        item.getSRHJ()
-                                ));
-                            }
-                        }
-
-                        @Override
-                        public void onDataNotAvailable() {
-                            ghxxes_ti.remove(0, ghxxes_ti.size());
-                        }
-                    });
-                }
-
-                @Override
-                public void error(ParseException e) {
-                    LOGGER.error("时间解析失败");
-                }
-            });
+            getDataList();
         });
 
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
-        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+//        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+//        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+//        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+//        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+//        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+//        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+//        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+//        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+//        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+//        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+//        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+//        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+//        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+//        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+//        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+//        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+//        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
+//        ghxxes_ti.add(new SRXX_TreeItem("111", "1111", "1111", true, 1, 20f));
 
         JFXTreeTableColumn<SRXX_TreeItem, String> ksmcColumn = new JFXTreeTableColumn<>("科室名称");
         JFXTreeTableColumn<SRXX_TreeItem, String> ysbhColumn = new JFXTreeTableColumn<>("医生编号");
@@ -323,10 +295,67 @@ public class DoctorShouRuController {
 
 
     private String parseSingleTime(JFXComboBox cb) {
-        if (Integer.parseInt(cb.getEditor().getText()) < 10)
-            return "0" + cb.getEditor().getText();
-        return cb.getEditor().getText();
+//        if (Integer.parseInt(cb.getEditor().getText()) < 10)
+//            return "0" + cb.getEditor().getText();
+//        return cb.getEditor().getText();
+
+        return String.format("%09d", Integer.parseInt(cb.getEditor().getText()));
     }
 
+    private void getDataList() {
+//        getSpace();
+        getSpace(new Callback() {
+            @Override
+            public void getStartAndEndTime(Timestamp start, Timestamp end) {
+                ShouruDataBase.getINSTANCE().getAllBetween(start, end, new ShouruRepository.LoadTsrxxItemCallback() {
+                    @Override
+                    public void onTasksLoaded(List<SRXX_Item> list) {
+                        for (SRXX_Item item : list) {
+                            ghxxes_ti.add(new SRXX_TreeItem(
+                                    item.getKSMC(),
+                                    item.getYSBH(),
+                                    item.getYSMC(),
+                                    item.isSFZJ(),
+                                    item.getGHRC(),
+                                    item.getSRHJ()
+                            ));
+                        }
+                    }
 
+                    @Override
+                    public void onDataNotAvailable() {
+                        ghxxes_ti.remove(0, ghxxes_ti.size());
+                    }
+                });
+            }
+
+            @Override
+            public void error(ParseException e) {
+                LOGGER.error("时间解析失败");
+            }
+        });
+    }
+
+    private void getAllData(){
+        ShouruDataBase.getINSTANCE().getAll(new ShouruRepository.LoadTsrxxItemCallback() {
+            @Override
+            public void onTasksLoaded(List<SRXX_Item> list) {
+                for (SRXX_Item item : list) {
+                    ghxxes_ti.add(new SRXX_TreeItem(
+                            item.getKSMC(),
+                            item.getYSBH(),
+                            item.getYSMC(),
+                            item.isSFZJ(),
+                            item.getGHRC(),
+                            item.getSRHJ()
+                    ));
+                }
+            }
+
+            @Override
+            public void onDataNotAvailable() {
+
+            }
+        });
+    }
 }

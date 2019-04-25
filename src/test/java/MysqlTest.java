@@ -2,6 +2,8 @@ import cn.cychust.comm.Executor;
 import cn.cychust.data.tbrxx.source.local.dao.UserDao;
 import cn.cychust.data.tghxx.T_GHXX;
 import cn.cychust.data.tghxx.source.TGHXXDataSource;
+import cn.cychust.data.tghxx.source.dao.GhxxDao;
+import cn.cychust.data.tghxx_item.Database;
 import cn.cychust.data.tksxx.T_KSXX;
 import cn.cychust.data.tksxx.source.TKSXXDataSource;
 import cn.cychust.data.tksxx.source.TKSXXRepository;
@@ -52,16 +54,16 @@ public class MysqlTest {
 
     @Test
     public void saveOne() {
-        Timestamp date = Timestamp.valueOf("2018-09-12 12:17:00");
+//        Timestamp date = Timestamp.valueOf("2018-09-12 12:17:00");
 
-        T_KSYS one = new T_KSYS("111", "1111", "11111", "1111", ",111111", true, date);
-        T_GHXX newone = new T_GHXX("111", "111", "1111", "111", 1, false, 10, date);
-        TGHXXDataSource.getINSTANCE().saveOne(newone);
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        T_KSYS one = new T_KSYS("111", "1111", "11111", "1111", ",111111", true, date);
+//        T_GHXX newone = new T_GHXX("111", "111", "1111", "111", 1, false, 10, date);
+//        TGHXXDataSource.getINSTANCE().saveOne(newone);
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 
     @Test
@@ -107,6 +109,11 @@ public class MysqlTest {
         }
     }
 
+    @Test
+    public void te() {
+//        GhxxDao.saveOne(new T_GHXX());
+    }
+
     @After
     public void close() {
     }
@@ -114,7 +121,6 @@ public class MysqlTest {
     @AfterClass
     public static void destory() {
         service.shutdown();
-
     }
 
 }
