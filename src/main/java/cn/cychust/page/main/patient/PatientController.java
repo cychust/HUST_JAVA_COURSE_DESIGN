@@ -1,8 +1,10 @@
 package cn.cychust.page.main.patient;
 
+import cn.cychust.State;
 import cn.cychust.base.BasePresenterImpl;
 import cn.cychust.page.login.LoginController;
 import cn.cychust.page.main.guahao.GuaHaoController;
+import cn.cychust.page.main.info.PatientInfoController;
 import com.jfoenix.controls.JFXButton;
 import io.datafx.controller.ViewController;
 import io.datafx.controller.flow.FlowException;
@@ -10,6 +12,7 @@ import io.datafx.controller.flow.context.ActionHandler;
 import io.datafx.controller.flow.context.FlowActionHandler;
 import io.datafx.controller.util.VetoException;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -36,6 +39,9 @@ public class PatientController implements PatientContract.View {
     private JFXButton btn_info;
 
 
+    @FXML
+    private Label lb_title;
+
     @ActionHandler
     private FlowActionHandler actionHandler;
 
@@ -43,6 +49,7 @@ public class PatientController implements PatientContract.View {
     public void init() throws Exception {
         setPresenter(new PatientPresenter(this));
 
+        lb_title.setText("Welcome " + State.getT_brxx().getBRMC());
         btn_logout.setGraphic(new ImageView(new Image("/images/logout.png")));
         btn_logout.setMaxHeight(40);
         btn_logout.setMaxWidth(40);
@@ -62,6 +69,13 @@ public class PatientController implements PatientContract.View {
                 e.printStackTrace();
             }
         });
+        btn_info.setOnMouseClicked(event -> {
+            try {
+                navigateToInfoView();
+            } catch (VetoException | FlowException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     private void navigateToLoginView() throws VetoException, FlowException {
@@ -72,6 +86,9 @@ public class PatientController implements PatientContract.View {
         actionHandler.navigate(GuaHaoController.class);
     }
 
+    private void navigateToInfoView() throws VetoException, FlowException {
+        actionHandler.navigate(PatientInfoController.class);
+    }
 
     @Override
     public void setPresenter(PatientContract.Presenter presenter) {

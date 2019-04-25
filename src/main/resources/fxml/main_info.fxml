@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            prefHeight="400.0" prefWidth="600.0">
-
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url(/images/2.jpg);-fx-background-size: 750 500; -fx-background-color: #ffffff" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label layoutX="0" layoutY="0" prefHeight="488.0" prefWidth="722.0" style="-fx-translate-z: -10; -fx-background-color: #ffffff; -fx-opacity: 0.8;" />
+        <Label layoutX="159.0" layoutY="85.0" prefHeight="18.0" prefWidth="61.0" text="个人编号" />
+        <Label layoutX="159.0" layoutY="131.0" prefHeight="18.0" prefWidth="61.0" text="个人姓名" />
+        <Label layoutX="159.0" layoutY="167.0" prefHeight="18.0" prefWidth="61.0" text="登录密码" />
+        <Label layoutX="159.0" layoutY="210.0" prefHeight="18.0" prefWidth="61.0" text="剩余余额" />
+        <Label layoutX="140.0" layoutY="257.0" prefHeight="18.0" prefWidth="80.0" text="最后登录时间" />
+        <Label layoutX="213.0" layoutY="27.0" prefHeight="39.0" prefWidth="172.0" text="个人信息" />
+        <Label fx:id="lb_brbh" layoutX="266.0" layoutY="86.0" prefHeight="16.0" prefWidth="101.0" text="Label" />
+        <Label fx:id="lb_brmc" layoutX="266.0" layoutY="132.0" prefHeight="16.0" prefWidth="101.0" text="Label" />
+        <Label fx:id="lb_dlkl" layoutX="266.0" layoutY="168.0" prefHeight="16.0" prefWidth="101.0" text="Label" />
+        <Label fx:id="lb_ycje" layoutX="266.0" layoutY="211.0" prefHeight="16.0" prefWidth="101.0" text="Label" />
+        <Label fx:id="lb_dlrq" layoutX="266.0" layoutY="258.0" prefHeight="16.0" prefWidth="149.0" text="" />
+        <JFXButton fx:id="btn_back" alignment="TOP_LEFT" layoutX="0.0" layoutY="0.0" mnemonicParsing="false"
+                   textAlignment="CENTER" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0"/>
+        <JFXButton fx:id="btn_logout" alignment="CENTER_RIGHT" layoutX="550.0" mnemonicParsing="false"
+                   textAlignment="CENTER" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0"/>
+    </children>
 </AnchorPane>

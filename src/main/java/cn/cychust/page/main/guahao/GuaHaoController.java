@@ -27,6 +27,7 @@ import io.datafx.controller.util.VetoException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import org.apache.log4j.Logger;
@@ -83,6 +84,9 @@ public class GuaHaoController {
     private JFXButton btn_back;
 //    private List<String> ksmcList = null;
 
+    @FXML
+    private Label lb_ye;
+
     private ObservableList<String> mValue = null;
 
     private ObservableList<String> ysxmList = FXCollections.observableArrayList();
@@ -113,6 +117,7 @@ public class GuaHaoController {
         tf_to_pay.setDisable(true);
         tf_zl.setDisable(true);
         tf_ghhm.setDisable(true);
+        lb_ye.setText(String.valueOf(State.getT_brxx().getYCJE()));
 
 
         btn_logout.setGraphic(new ImageView(new Image("/images/logout.png")));
@@ -229,7 +234,7 @@ public class GuaHaoController {
                     tf_to_pay.setText(String.valueOf(t_hzxx.getGHFY()));
                     if (State.getT_brxx().getYCJE() < t_hzxx.getGHFY()) {
                         tf_real_pay.setDisable(false);
-                        tf_real_pay.setText("0");
+                        tf_real_pay.setText("");
                     } else {
                         tf_zl.setText(String.valueOf(State.getT_brxx().getYCJE() - t_hzxx.getGHFY()));
                     }
@@ -341,5 +346,6 @@ public class GuaHaoController {
         tf_zl.setText("");
         tf_to_pay.setText("");
         tf_ghhm.setText("");
+        lb_ye.setText(String.valueOf(State.getT_brxx().getYCJE()));
     }
 }

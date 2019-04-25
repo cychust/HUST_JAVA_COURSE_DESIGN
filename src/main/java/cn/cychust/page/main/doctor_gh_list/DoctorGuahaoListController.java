@@ -8,6 +8,7 @@ import cn.cychust.data.tbrxx.source.TBRXXDataSource;
 import cn.cychust.data.tghxx_item.Repository;
 import cn.cychust.page.login.LoginController;
 import cn.cychust.page.main.doctor.DoctorController;
+import cn.cychust.page.main.patient.PatientController;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTreeTableColumn;
 import com.jfoenix.controls.JFXTreeTableView;
@@ -62,7 +63,7 @@ public class DoctorGuahaoListController {
 
     @PostConstruct
     public void init() throws Exception {
-        lb_title.setText(State.getT_ksys().getYSMC() + "的挂号列表");
+        lb_title.setText("全部医生的收入列表");
 
         btn_logout.setGraphic(new ImageView(new Image("/images/logout.png")));
         btn_logout.setMaxHeight(40);

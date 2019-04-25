@@ -5,16 +5,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="722.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="722.0"
+            style="-fx-background-image: url(/images/a3.jpg); -fx-background-repeat: stretch; -fx-background-size: 700 500;"
+            xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
 
     <children>
-        <JFXButton fx:id="btn_logout" alignment="CENTER_RIGHT" layoutX="550.0" mnemonicParsing="false" textAlignment="CENTER" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
-        <JFXButton fx:id="btn_gh_list" buttonType="RAISED" layoutX="217.0" layoutY="150.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" ripplerFill="#fc0c0c" style="-fx-background-color: red; -fx-border-radius:10" text="挂号列表" textAlignment="CENTER" />
-        <JFXButton fx:id="btn_shouru" buttonType="RAISED" layoutX="417.0" layoutY="150.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" ripplerFill="#f80707" style="-fx-background-color: blue;" text="个人信息" textAlignment="CENTER" />
-      <Label fx:id="lb_title" layoutX="221.0" layoutY="5.0" prefHeight="78.0" prefWidth="281.0" text="Label">
-         <font>
-            <Font size="24.0" />
-         </font></Label>
+        <Label layoutX="0" layoutY="0" prefHeight="488.0" prefWidth="722.0"
+               style="-fx-translate-z: -10; -fx-background-color: #ffffff; -fx-opacity: 0.8;"/>
+        <JFXButton fx:id="btn_logout" alignment="CENTER_RIGHT" layoutX="550.0" mnemonicParsing="false"
+                   textAlignment="CENTER" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0"/>
+        <JFXButton fx:id="btn_gh_list" buttonType="RAISED" layoutX="217.0" layoutY="150.0" mnemonicParsing="false"
+                   prefHeight="100.0" prefWidth="100.0" ripplerFill="#fc0c0c"
+                   style="-fx-background-color: red; -fx-border-radius:10" text="挂号列表" textAlignment="CENTER"/>
+        <JFXButton fx:id="btn_shouru" buttonType="RAISED" layoutX="417.0" layoutY="150.0" mnemonicParsing="false"
+                   prefHeight="100.0" prefWidth="100.0" ripplerFill="#f80707" style="-fx-background-color: blue;"
+                   text="收入列表" textAlignment="CENTER"/>
+        <Label fx:id="lb_title" layoutX="221.0" layoutY="5.0" prefHeight="78.0" prefWidth="281.0" text="Label">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </Label>
     </children>
 
 </AnchorPane>

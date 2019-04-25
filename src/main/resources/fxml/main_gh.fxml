@@ -7,61 +7,80 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="488.0" prefWidth="722.0" style="-fx-background-image: url(/images/2.jpg);-fx-background-size: 750 500; -fx-background-color: #ffffff" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="488.0" prefWidth="722.0"
+            style="-fx-background-image: url(/images/2.jpg);-fx-background-size: 750 500; -fx-background-color: #ffffff"
+            xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Label layoutX="0" layoutY="0" prefHeight="488.0" prefWidth="722.0" style="-fx-translate-z: -10; -fx-background-color: #ffffff; -fx-opacity: 0.8;" />
-        <JFXComboBox fx:id="cb_ksmc" editable="true" layoutX="200.0" layoutY="100.0" prefWidth="150.0" style="-fx-translate-z: 10;" />
-        <JFXComboBox fx:id="cb_hzlb" editable="true" layoutX="200.0" layoutY="180.0" prefWidth="150.0" style="-fx-translate-z: 10;" />
-        <JFXComboBox fx:id="cb_ysxm" editable="true" layoutX="460.0" layoutY="100.0" prefWidth="150.0" style="-fx-translate-z: 10;" />
-        <JFXComboBox fx:id="cb_hzmc" editable="true" layoutX="460.0" layoutY="180.0" prefWidth="150.0" style="-fx-translate-z: 10;" />
+        <Label layoutX="0" layoutY="0" prefHeight="488.0" prefWidth="722.0"
+               style="-fx-translate-z: -10; -fx-background-color: #ffffff; -fx-opacity: 0.8;"/>
+        <JFXComboBox fx:id="cb_ksmc" editable="true" layoutX="200.0" layoutY="100.0" prefWidth="150.0"
+                     style="-fx-translate-z: 10;"/>
+        <JFXComboBox fx:id="cb_hzlb" editable="true" layoutX="200.0" layoutY="180.0" prefWidth="150.0"
+                     style="-fx-translate-z: 10;"/>
+        <JFXComboBox fx:id="cb_ysxm" editable="true" layoutX="460.0" layoutY="100.0" prefWidth="150.0"
+                     style="-fx-translate-z: 10;"/>
+        <JFXComboBox fx:id="cb_hzmc" editable="true" layoutX="460.0" layoutY="180.0" prefWidth="150.0"
+                     style="-fx-translate-z: 10;"/>
         <Label layoutX="118.0" layoutY="100.0" style="-fx-translate-z: 10;" text="科室名称" textFill="BLACK">
             <font>
-                <Font name="System Bold" size="18.0" />
+                <Font name="System Bold" size="18.0"/>
             </font>
         </Label>
         <Label layoutX="118.0" layoutY="180.0" style="-fx-translate-z: 10;" text="号种类别" textFill="BLACK">
             <font>
-                <Font size="18.0" />
+                <Font size="18.0"/>
             </font>
         </Label>
         <Label layoutX="118.0" layoutY="260.0" style="-fx-translate-z: 10;" text="缴款金额" textFill="BLACK">
             <font>
-                <Font size="18.0" />
+                <Font size="18.0"/>
             </font>
         </Label>
         <Label layoutX="118.0" layoutY="340.0" style="-fx-translate-z: 10;" text="找零金额" textFill="BLACK">
             <font>
-                <Font size="18.0" />
+                <Font size="18.0"/>
             </font>
         </Label>
         <Label layoutX="378.0" layoutY="100.0" style="-fx-translate-z: 10;" text="医生姓名" textFill="BLACK">
             <font>
-                <Font name="System Bold Italic" size="18.0" />
+                <Font name="System Bold Italic" size="18.0"/>
             </font>
         </Label>
         <Label layoutX="378.0" layoutY="182.0" style="-fx-translate-z: 10;" text="号种名称" textFill="BLACK">
             <font>
-                <Font size="18.0" />
+                <Font size="18.0"/>
             </font>
         </Label>
         <Label layoutX="378.0" layoutY="271.0" style="-fx-translate-z: 10;" text="应缴金额" textFill="black">
             <font>
-                <Font size="18.0" />
+                <Font size="18.0"/>
             </font>
         </Label>
         <Label layoutX="378.0" layoutY="335.0" style="-fx-translate-z: 10;" text="挂号号码" textFill="BLACK">
             <font>
-                <Font size="18.0" />
+                <Font size="18.0"/>
             </font>
         </Label>
-        <JFXTextField fx:id="tf_real_pay" layoutX="200.0" layoutY="260.0" style="-fx-translate-z: 10;" />
-        <JFXTextField fx:id="tf_zl" layoutX="200.0" layoutY="340.0" style="-fx-translate-z: 10;" />
-        <JFXTextField fx:id="tf_to_pay" layoutX="460.0" layoutY="260.0" style="-fx-translate-z: 10;" />
-        <JFXTextField fx:id="tf_ghhm" layoutX="460.0" layoutY="340.0" style="-fx-translate-z: 10;" />
-        <JFXButton fx:id="btn_back" alignment="TOP_LEFT" layoutX="0.0" layoutY="0.0" mnemonicParsing="false" textAlignment="CENTER" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
-        <JFXButton fx:id="btn_logout" alignment="CENTER_RIGHT" layoutX="550.0" mnemonicParsing="false" textAlignment="CENTER" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
-      <JFXButton fx:id="btn_confirm" buttonType="RAISED" layoutX="211.0" layoutY="406.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="72.0" style="-fx-background-color: green;" text="确定" textFill="black" />
-      <JFXButton fx:id="btn_clear" buttonType="RAISED" layoutX="378.0" layoutY="406.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="72.0" style="-fx-background-color: red;" text="清除" textFill="black" />
+        <JFXTextField fx:id="tf_real_pay" layoutX="200.0" layoutY="260.0" style="-fx-translate-z: 10;"/>
+        <JFXTextField fx:id="tf_zl" layoutX="200.0" layoutY="340.0" style="-fx-translate-z: 10;"/>
+        <JFXTextField fx:id="tf_to_pay" layoutX="460.0" layoutY="260.0" style="-fx-translate-z: 10;"/>
+        <JFXTextField fx:id="tf_ghhm" layoutX="460.0" layoutY="340.0" style="-fx-translate-z: 10;"/>
+        <JFXButton fx:id="btn_back" alignment="TOP_LEFT" layoutX="0.0" layoutY="0.0" mnemonicParsing="false"
+                   textAlignment="CENTER" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0"/>
+        <JFXButton fx:id="btn_logout" alignment="CENTER_RIGHT" layoutX="550.0" mnemonicParsing="false"
+                   textAlignment="CENTER" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0"/>
+        <JFXButton fx:id="btn_confirm" buttonType="RAISED" layoutX="211.0" layoutY="406.0" mnemonicParsing="false"
+                   prefHeight="33.0" prefWidth="72.0" style="-fx-background-color: green;" text="确定" textFill="black"/>
+        <JFXButton fx:id="btn_clear" buttonType="RAISED" layoutX="378.0" layoutY="406.0" mnemonicParsing="false"
+                   prefHeight="33.0" prefWidth="72.0" style="-fx-background-color: red;" text="清除" textFill="black"/>
+        <Label layoutX="265.0" layoutY="43.0" prefHeight="40.0" prefWidth="193.0"
+               style="-fx-alignment: center; -fx-font-weight: BLOD" text="挂 号">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </Label>
+        <Label layoutX="115.0" layoutY="302.0" prefHeight="16.0" prefWidth="78.0" text="账户余额:"/>
+        <Label fx:id="lb_ye" layoutX="200.0" layoutY="302.0" prefHeight="16.0" prefWidth="78.0" text="0"/>
 
     </children>
 </AnchorPane>
