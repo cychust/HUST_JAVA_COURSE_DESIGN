@@ -6,7 +6,7 @@
 
 ### 登录界面
 
-![](./readme-image/2019-04-25 19-32-31屏幕截图.png)
+![](./readme-image/1.png)
 
 
 
@@ -14,7 +14,7 @@
 
 
 
-![](./readme-image/2019-04-25 19-32-48屏幕截图.png)
+![](./readme-image/2.png)
 
 
 
@@ -22,7 +22,7 @@
 
 
 
-![](./readme-image/2019-04-25 19-32-57屏幕截图.png)
+![](./readme-image/3.png)
 
 
 
@@ -30,7 +30,7 @@
 
 
 
-![](./readme-image/2019-04-25 19-33-06屏幕截图.png)
+![](./readme-image/4.png)
 
 
 
@@ -40,13 +40,13 @@
 
 
 
-![](./readme-image/2019-04-25 19-33-32屏幕截图.png)
+![](./readme-image/5.png)
 
 
 
 ### 医生收入列表界面
 
-![](./readme-image/2019-04-25 19-33-48屏幕截图.png)
+![](./readme-image/6.png)
 
 
 
@@ -64,11 +64,15 @@
 
 # 实验要求文档
 
-[文档]()
+[文档](<https://github.com/cychust/HUST_JAVA_COURSE_DESIGN/blob/master/Java%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82.pdf>)
 
 # 数据库建立sql文件
 
 [hops.sql](./hosp.sql)
+
+
+
+使用 `use` 语句导入
 
 
 
