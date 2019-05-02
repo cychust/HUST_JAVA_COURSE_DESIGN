@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="18c70c67-edb5-4d15-8caa-da98c18cd339" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/cychust/page/main/doctor_gh_list/DoctorGuahaoListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/cychust/page/main/doctor_gh_list/DoctorGuahaoListController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -295,8 +293,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -308,7 +307,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -504,6 +502,8 @@
       <workItem from="1556179425968" duration="7481000" />
       <workItem from="1556191581147" duration="508000" />
       <workItem from="1556369747198" duration="1238000" />
+      <workItem from="1556802416480" duration="61000" />
+      <workItem from="1556802536139" duration="134000" />
     </task>
     <servers />
   </component>
@@ -540,7 +540,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181067000" />
+    <option name="totallyTimeSpent" value="181262000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -565,10 +565,10 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49946752" weight="0.32937366" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32721382" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32901832" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32829374" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49839228" visible="true" weight="0.22417465" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49839228" visible="true" weight="0.2284345" />
       <window_info anchor="right" id="Database" order="3" weight="0.32960597" />
       <window_info id="Learn" order="2" weight="0.32960597" />
       <window_info id="Structure" order="1" sideWeight="0.50053936" side_tool="true" weight="0.25239617" />
@@ -579,11 +579,11 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49946752" weight="0.32721382" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49946752" weight="0.32721382" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
